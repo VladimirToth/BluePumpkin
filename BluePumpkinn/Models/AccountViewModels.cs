@@ -11,7 +11,7 @@ namespace BluePumpkinn.Models
         public string Email { get; set; }
 
         [Required]
-        public DateTime? BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -85,7 +85,7 @@ namespace BluePumpkinn.Models
         public string ConfirmPassword { get; set; }
 
         [Required]
-        public DateTime? BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 
     public class ResetPasswordViewModel
