@@ -8,6 +8,7 @@ namespace BluePumpkinn.Controllers
 {
     public class HomeController : Controller
     {
+        [RequireHttps]
         public ActionResult Index()
         {
             return View();
@@ -22,6 +23,7 @@ namespace BluePumpkinn.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
