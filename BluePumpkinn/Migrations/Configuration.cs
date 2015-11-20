@@ -1,5 +1,8 @@
 namespace BluePumpkinn.Migrations
 {
+    using BluePumpkinn.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -27,6 +30,35 @@ namespace BluePumpkinn.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            if (!context.Roles.Any())
+            {
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                var role = new IdentityRole
+                {
+                    Name = "Administrator"
+                };
+                roleManager.CreateAsync(role).Wait();
+
+            }
+
+            if (!context.Users.Any())
+            {
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new ApplicationUserManager(userStore);
+
+                var user = new ApplicationUser
+                {
+                    Email = "foo@bar.com",
+                    UserName = "SuperUser"
+                };
+                userManager.CreateAsync(user, "MySecretPassword1234").Wait();
+                userManager.AddToRolesAsync(user.Id, "Administrator").Wait();
+            }
+
+
+            
         }
     }
 }
