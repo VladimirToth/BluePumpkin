@@ -4,8 +4,6 @@
 }
 
 
-
-
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -37,15 +35,13 @@
     <div class="form-group">
         @Html.LabelFor(m => m.BirthDate, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-
-            @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control" })
-            @*@Html.EditorFor(m => m.BirthDate,
-           new { htmlAttributes = new 
+            @Html.EditorFor(m => m.BirthDate,
+           new { htmlAttributes = new
            {
-               @Value = Model != null ? Model.BirthDate.ToString("MM/dd/yyyy") : DateTime.Now.Date.ToString("MM/dd/yyyy"),
+               @Value = (Model != null && Model.BirthDate != null ? Model.BirthDate.ToString("dd/MM/yyyy") : ""),
                @class = "form-control"
            },
-            })*@
+           })
             @Html.ValidationMessageFor(m => m.BirthDate)
         </div>
     </div>
@@ -61,18 +57,17 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 
-    @*<script type="text/javascript">
-        $(function () {
+<script type="text/javascript">
+  $(function () {
 
-            $('#BirthDate').datetimepicker({
-                defaultDate: '@Model.BirthDate',
-                format: 'L',
-                showClose: true,
-                showClear: true,
-                toolbarPlacement: 'top'
-            });
+    $('#BirthDate').datetimepicker({
+      defaultDate: '@( Model != null ? Model.BirthDate.ToString() : "")',
+      format: 'L',
+      showClose: true,
+      showClear: true,
+      toolbarPlacement: 'top'
+    });
 
-        });*@
-    
-    @*</script>*@
+  });
+</script>
 }
