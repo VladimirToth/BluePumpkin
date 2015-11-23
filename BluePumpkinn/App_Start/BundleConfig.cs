@@ -25,7 +25,9 @@ namespace BluePumpkinn
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/main.css",
+                      "~/Content/font-awesome.min.css", 
+                      "~/Content/hover_pack.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/datetime").Include(
                 "~/Scripts/moment*",
