@@ -2,30 +2,476 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <title>Blue Pumpkinn</title>
+    <link href="~/Content/hover_pack.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/Content/main.css" rel="stylesheet">
+    <link href="~/Content/colors/color-74c9be.css" rel="stylesheet">
+    <link href="~/Content/animations.css" rel="stylesheet">
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+    <!-- JavaScripts needed at the beginning
+    ================================================== -->
+    <script type="text/javascript" src="http://alvarez.is/demo/marco/assets/js/twitterFetcher_v10_min.js"></script>
+    <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+   @* <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>*@
+    @*<script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 11,
+
+                scrollwheel: false,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [	{		featureType:'water',		stylers:[{color:'#74c9be'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#f2f2f2'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#444444'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
+            };
+
+            // Get the HTML DOM element that will contain your map
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using out element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+        }
+    </script>*@
+
+
+    <!-- Main Jquery & Hover Effects. Should load first -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/hover_pack.js"></script>
+    <script src="~/Scripts/modernizr.custom.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <! ========== HEADERWRAP ====================================================================================================
+    =============================================================================================================================>
+    <div id="headerwrap">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-lg-8 col-lg-offset-2 mt">
+                    <h1 class="animation slideDown">We are Blue Pumpkinn. Changing the world since 1995.</h1>
+                    <p class="mt"><a href="#"><button type="button" class="btn btn-cta btn-lg">More about Us</button></a></p>
+                </div>
+
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div> <!-- /headerwrap -->
+    <! ========== BLOG POSTS ====================================================================================================
+    =============================================================================================================================>
+    <div id="black"><!-- /white -->
+        <div class="container">
+            <div class="row mt">
+                <div class="col-lg-4 col-lg-offset-4 centered">
+                    <h3>How to participate in company event or competition:</h3>
+                    <hr>
+                </div>
+            </div>
+            <div class="row mt">
+                <div class="col-lg-3">
+                    <p class="capitalize">1</p>
+                    <h4>Register or Sign in</h4>
+                    <p>First, if aren't registered, you have to register yourself into this website. While You are registered, you can sign in. You can find Register and Sign in buttons on top right corner of this site</p>
+                </div>
+                <div class="col-lg-3">
+                    <p class="capitalize">2</p>
+                    <h4>Pick event</h4> 
+                    <p>Pick Your event from a ready-made events.</p>
+                </div>
+                <div class="col-lg-3">
+                    <p class="capitalize">3</p>
+                    <h4>Wait for confirmation</h4>
+                    <p>You have to wait for admin to confirm Your participation in the chosen event od competition.</p>
+                </div>
+
+                <div class="col-lg-3">
+                    <p class="capitalize">4</p>
+                    <h4>Participate</h4>
+                    <p>When admin approved event or competition, You get notification about it and can instantly participate.</p>
+                </div>
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div><!-- /white -->
+    <! ========== CALL TO ACTION 1 ==============================================================================================
+    =============================================================================================================================>
+    @*<div id="cta01">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>The probability of success is difficult to estimate;<br />but if we never search, the chance of success is zero.</h2>
+                    <button type="button" class="btn btn-cta btn-lg">LEARN MORE</button>
+                </div>
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div><! --/cta01 -->*@
+    <! ========== ACTUAL EVENTS SECTION ================================================================================================
+    =============================================================================================================================>
+    <div class="container">
+        <div class="row mt centered">
+            <div class="col-lg-4 col-lg-offset-4">
+                <button type="button" class="btn btn-theme btn-lg">Register or Sign in</button>
+            </div>
+        </div><!-- /row -->
+        <div class="row mt">
+            <div class="col-lg-4 centered si">
+                    <a class="b-link-fade b-animate-go" href="#">
+                        <img width="350" height="250" src="~/Images/charity.jpeg" alt="" />
+                        <div class="b-wrapper">
+                            <h4 class="b-from-left b-animate b-delay03">Teambuilding</h4>
+                            <p class="b-from-right b-animate b-delay03">View Details</p>
+                        </div>
+                    </a>
+              </div>
+            <div class="col-lg-4 centered si desc">
+                    <a class="b-link-fade b-animate-go" href="#">
+                        <img width="350" height="250" src="~/Images/chess.jpeg" alt="" />
+                        <div class="b-wrapper">
+                            <h4 class="b-from-left b-animate b-delay03">Chess Tournament</h4>
+                            <p class="b-from-right b-animate b-delay03">View Details</p>
+                        </div>
+                    </a>
+            </div>
+            <div class="col-lg-4 centered si desc">
+                <a class="b-link-fade b-animate-go" href="#">
+                    <img width="350" height="250" src="~/Images/christmas.jpeg" alt="" />
+                    <div class="b-wrapper">
+                        <h4 class="b-from-left b-animate b-delay03">Christmas Party</h4>
+                        <p class="b-from-right b-animate b-delay03">View Details</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 centered si desc">
+                <a class="b-link-fade b-animate-go" href="#">
+                    <img width="350" height="250" src="~/Images/employee.jpg" alt="" />
+                    <div class="b-wrapper">
+                        <h4 class="b-from-left b-animate b-delay03">Employee of the Month Competition</h4>
+                        <p class="b-from-right b-animate b-delay03">View Details</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 centered si desc">
+                <a class="b-link-fade b-animate-go" href="#">
+                    <img width="350" height="250" src="~/Images/football.jpeg" alt="" />
+                    <div class="b-wrapper">
+                        <h4 class="b-from-left b-animate b-delay03">Football Tournament</h4>
+                        <p class="b-from-right b-animate b-delay03">View Details</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 centered si desc">
+                <a class="b-link-fade b-animate-go" href="#">
+                    <img width="350" height="250" src="~/Images/global_438001916.jpeg" alt="" />
+                    <div class="b-wrapper">
+                        <h4 class="b-from-left b-animate b-delay03">Yearly Company Meeting</h4>
+                        <p class="b-from-right b-animate b-delay03">View Details</p>
+                    </div>
+                </a>
+            </div>
+        </div><!-- /row -->
+    </div><!-- /container --> 
+    <! ========== BLACK SECTION - COMPANY ========================================================================================
+    =============================================================================================================================>
+    <div id="black">
+        <div class="container">
+            <div class="row mt centered">
+                <div class="col-lg-4 col-lg-offset-4">
+                    <h3>Our Company</h3>
+                    <hr>
+                </div><!-- /col-lg-4 -->
+            </div><!-- /row -->
+
+            <div class="row mt">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <p>Blue Pumpkinn is the Internet Marketing Company providing different services like dial-up and broadband.</p>
+                </div><! --/col-lg-8 -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div><!-- /black -->
+    <! ========== FEATURED ICONS ================================================================================================
+    =============================================================================================================================>
+    <div class="container">
+        <div class="row mt centered">
+            <div class="col-lg-4 col-lg-offset-4">
+                <h3>Recent Winners</h3>
+                <hr>
+            </div><!-- /col-lg-4 -->
+        </div><!-- /row -->
+        <div class="row mt">
+            <div class="col-lg-4 centered si">
+                <i class="fa fa-flask"></i>
+                <h4>Chemistry League</h4>
+                <p>First prize: James Franco</p>
+            </div>
+            <div class="col-lg-4 centered si">
+                <i class="fa fa-eye"></i>
+                <h4>Investigation Competition</h4>
+                <p>Winners: White Eagle Team</p>
+            </div>
+            <div class="col-lg-4 centered si">
+                <i class="fa fa-mobile"></i>
+                <h4>Geocaching Time-Rally</h4>
+                <p>Winners: Jessica Biel and Silvester Stallone</p>
+            </div>
+            <div class="col-lg-4 centered si">
+                <i class="fa fa-cog"></i>
+                <h4>Engineering Competition</h4>
+                <p>Winner: Jose Gonzalez</p>
+            </div>
+            <div class="col-lg-4 centered si">
+                <i class="fa fa-flag"></i>
+                <h4>Capture the Flag Tournament</h4>
+                <p>Winnesr: IT Department Team</p>
+            </div>
+            <div class="col-lg-4 centered si">
+                <i class="fa fa-heart"></i>
+                <h4>Best Marketing Story</h4>
+                <p>Winners: Barack Obama and Angela Merkel</p>
+            </div>
+        </div><!-- /row -->
+    </div><!-- /container -->
+    <! ========== OUR TEAM ======================================================================================================
+    =============================================================================================================================>
+
+    @*<div id="white">
+        <div class="container">
+            <div class="row mt">
+                <div class="col-lg-4 col-lg-offset-4 centered">
+                    <h3>Our Team</h3>
+                    <hr>
+                </div>
+            </div><! --/row -->
+
+            <div class="row">
+                <div class="col-lg-4 centered">
+                    <div class="members">
+                        <img src="assets/img/team/gianni.png" alt="">
+                        <div class="team-info">
+                            <div class="subhead">Developer</div>
+                            <h2 class="team-name">Gianni</h2>
+                            <p class="team-description"><i class="fa fa-facebook"></i><i class="fa fa-twitter"></i><i class="fa fa-dribbble"></i></p>
+                        </div>
+                    </div>
+                </div><!-- /col-lg-4 -->
+
+                <div class="col-lg-4 centered">
+                    <div class="members">
+                        <img src="assets/img/team/rebecca.png" alt="">
+                        <div class="team-info">
+                            <div class="subhead">Designer</div>
+                            <h2 class="team-name">Rebecca</h2>
+                            <p class="team-description"><i class="fa fa-facebook"></i><i class="fa fa-twitter"></i><i class="fa fa-dribbble"></i></p>
+                        </div>
+                    </div>
+                </div><!-- /col-lg-4 -->
+
+                <div class="col-lg-4 centered">
+                    <div class="members">
+                        <img src="assets/img/team/william.png" alt="">
+                        <div class="team-info">
+                            <div class="subhead">Designer</div>
+                            <h2 class="team-name">William</h2>
+                            <p class="team-description"><i class="fa fa-facebook"></i><i class="fa fa-twitter"></i><i class="fa fa-dribbble"></i></p>
+                        </div>
+                    </div>
+                </div><!-- /col-lg-4 -->
+            </div><! --/row -->
+        </div><! --/container -->
+    </div><! --/white -->*@
+
+    <! ========== BLACK SECTION =================================================================================================
+    =============================================================================================================================>
+    @*<div id="black">
+        <div class="container pt">
+            <div class="row mt centered">
+                <div class="col-lg-3">
+                    <p><i class="fa fa-instagram"></i></p>
+                    <h1>21.337</h1>
+                    <hr>
+                    <h4>Pictures Taken</h4>
+                </div>
+                <div class="col-lg-3">
+                    <p><i class="fa fa-music"></i></p>
+                    <h1>9.764</h1>
+                    <hr>
+                    <h4>Songs Listened</h4>
+                </div>
+                <div class="col-lg-3">
+                    <p><i class="fa fa-trophy"></i></p>
+                    <h1>107</h1>
+                    <hr>
+                    <h4>Awards Earned</h4>
+                </div>
+                <div class="col-lg-3">
+                    <p><i class="fa fa-ticket"></i></p>
+                    <h1>209</h1>
+                    <hr>
+                    <h4>Movies Watched</h4>
+                </div>
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div><!-- /black -->*@
+    <! ========== TESTIMONIAL CAROUSEL ==========================================================================================
+    =============================================================================================================================>
+
+    <div class="container">
+        <div class="row mt">
+            <div class="col-lg-4 col-lg-offset-4 centered">
+                <h3>Honest Testimonials</h3>
+                <hr>
+            </div>
+        </div><! --/row -->
+
+        <div class="row mt">
+            <div class="col-lg-8 col-lg-offset-2 centered">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</h2>
+                            <h5>Paul Morrison - BlackTie.co</h5>
+                        </div>
+
+                        <div class="item">
+                            <h2>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h2>
+                            <h5>Mike Wellington - BlackTie.co</h5>
+                        </div>
+                    </div><!-- /carousel-inner -->
+
+                </div><! --/carousel-example -->
+            </div><!-- /col-lg-8 -->
+        </div><! --/row -->
+    </div><!-- /container -->
+    <! ========== CONTACT SECTION ===============================================================================================
+    =============================================================================================================================>
+
+    <div id="white">
+        <div class="container">
+            <div class="row mt">
+                <div class="col-lg-4 col-lg-offset-4 centered">
+                    <h3>Contact Us</h3>
+                    <hr>
+                </div>
+            </div><! --/row -->
+        </div><!-- /container -->
+        <div id="map"></div>
+    </div><!-- /white -->
+    <! ========== CALL TO ACTION BAR ===============================================================================================
+    =============================================================================================================================>
+    <div id="cta-bar">
+        <div class="container">
+            <div class="row centered">
+                <a href="#"><h4>Do You Want To Create A New Event?</h4></a>
+            </div>
+        </div><!-- /container -->
+    </div><!-- /cta-bar -->
+    <! ========== FOOTER ========================================================================================================
+    =============================================================================================================================>
+
+    <div id="f">
+        <div class="container">
+            <div class="row">
+                <!-- ADDRESS -->
+                <div class="col-lg-3">
+                    <h4>Blue Pumpkinn</h4>
+                    <p>
+                        Sancova 63<br />
+                        Postal 83104<br />
+                        Bratislava, Slovakia<br />
+                    </p>
+                    <p>
+                        <i class="fa fa-mobile"></i> +421 910 589 859<br />
+                        <i class="fa fa-envelope-o"></i> info@bluepumpkinn.com
+                    </p>
+                </div><! --/col-lg-3 -->
+
+                <!-- TWEETS -->
+                <div class="col-lg-3">
+                    <h4>Recent Tweets</h4>
+                    <div id="showtweets"></div>
+                    <script>
+							twitterFetcher.fetch('258157205101088768', 'showtweets', 2, true, false, false, '', false, handleTweets, false);
+
+							function handleTweets(tweets){
+							    var x = tweets.length;
+							    var n = 0;
+							    var element = document.getElementById('showtweets');
+							    var html = '<ul>';
+							    while(n < x) {
+							      html += '<li>' + tweets[n] + '</li>';
+							      n++;
+							    }
+							    html += '</ul>';
+							    element.innerHTML = html;
+							}
+                    </script>
+                    <p>Follow us</p>
+                </div><!-- /col-lg-3 -->
+                <!-- LATEST POSTS -->
+                <div class="col-lg-3">
+                    <h4>Latest Posts</h4>
+                    <p>
+                        <i class="fa fa-angle-right"></i> A post with an image<br />
+                        <i class="fa fa-angle-right"></i> Other post with a video<br />
+                        <i class="fa fa-angle-right"></i> A full width post<br />
+                        <i class="fa fa-angle-right"></i> We talk about something nice<br />
+                        <i class="fa fa-angle-right"></i> Yet another single post<br />
+                    </p>
+                </div><!-- /col-lg-3 -->
+                <!-- NEW PROJECT -->
+                <div class="col-lg-3">
+                    <h4>Latest proposed Event</h4>
+                    <a href="#"><img class="img-responsive" src="assets/img/portfolio/port03.jpg" alt="" /></a>
+                </div><!-- /col-lg-3 -->
+            </div><! --/row -->
+        </div><!-- /container -->
+    </div><!-- /f -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/AnimOnScroll.js"></script>
+    <script src="~/Scripts/retina.js"></script>
+
+    <script>
+		$(window).scroll(function() {
+			$('.si').each(function(){
+			var imagePos = $(this).offset().top;
+
+			var topOfWindow = $(window).scrollTop();
+				if (imagePos < topOfWindow+400) {
+					$(this).addClass("slideUp");
+				}
+			});
+		});
+    </script>
+
+
+</body>
+</html>

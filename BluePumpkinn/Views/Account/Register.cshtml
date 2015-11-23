@@ -3,6 +3,7 @@
     ViewBag.Title = "Register";
 }
 
+
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -29,6 +30,22 @@
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
         </div>
     </div>
+
+    //http://www.skimedic.com/blog/post/2015/04/03/Using-a-DateTime-Picker-for-ASPNET-MVC-5-with-Bootstrap.aspx
+    <div class="form-group">
+        @Html.LabelFor(m => m.BirthDate, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.BirthDate,
+           new { htmlAttributes = new
+           {
+               @Value = (Model != null && Model.BirthDate != null ? Model.BirthDate.ToString("dd/MM/yyyy") : ""),
+               @class = "form-control"
+           },
+           })
+            @Html.ValidationMessageFor(m => m.BirthDate)
+        </div>
+    </div>
+    
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />
@@ -36,6 +53,21 @@
     </div>
 }
 
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+<script type="text/javascript">
+  $(function () {
+
+    $('#BirthDate').datetimepicker({
+      defaultDate: '@( Model != null ? Model.BirthDate.ToString() : "")',
+      format: 'L',
+      showClose: true,
+      showClear: true,
+      toolbarPlacement: 'top'
+    });
+
+  });
+</script>
 }

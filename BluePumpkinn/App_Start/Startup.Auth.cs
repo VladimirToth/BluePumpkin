@@ -45,24 +45,27 @@ namespace BluePumpkinn
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+
+            //Enables login to application via Microsoft Account. 
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "000000004813B390",
+                clientSecret: "WXqnfBzqUU3WjsS6YrM0V48X2mIz8y1J");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //Enables login to application via Facebook Account. 
+            app.UseFacebookAuthentication(
+               appId: "196367540697233",
+               appSecret: "684bf5200b2d58261bd80e32f9b36c4a");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            //Enables login to application via Google Account
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "731306319294-fm8a1qlp644rr1o8boktq6uf19dvot23.apps.googleusercontent.com",
+                ClientSecret = "8vMOzOVCR6QJ6CA4fBn9DyVD"
+            });
         }
     }
 }

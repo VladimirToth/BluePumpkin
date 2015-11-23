@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BluePumpkinn.Models
@@ -8,6 +9,9 @@ namespace BluePumpkinn.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        public DateTime BirthDate { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -64,6 +68,7 @@ namespace BluePumpkinn.Models
 
     public class RegisterViewModel
     {
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -79,6 +84,9 @@ namespace BluePumpkinn.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public DateTime BirthDate { get; set; }
     }
 
     public class ResetPasswordViewModel
