@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
+using System.Collections.Generic;
 
 namespace BluePumpkinn.Models
 {
@@ -11,6 +12,7 @@ namespace BluePumpkinn.Models
     public class ApplicationUser : IdentityUser
     {
         public DateTime BirthDate { get; set; }
+        //public File Photo { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -34,8 +36,6 @@ namespace BluePumpkinn.Models
             return new ApplicationDbContext();
         }
 
-     //   public System.Data.Entity.DbSet<BluePumpkinn.Models.ApplicationUser> ApplicationUsers { get; set; }
-
-        //public System.Data.Entity.DbSet<BluePumpkinn.Models.ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<File> Files { get; set; }
     }
 }

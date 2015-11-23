@@ -8,7 +8,7 @@ namespace BluePumpkinn.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-        public ActionResult Index()
+        public ActionResult Employees()
         {
             return View(UserManager.Users);
         }

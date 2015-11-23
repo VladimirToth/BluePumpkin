@@ -186,8 +186,13 @@
     <Compile Include="Migrations\201511181819093_New.Designer.cs">
       <DependentUpon>201511181819093_New.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511221252464_File1.cs" />
+    <Compile Include="Migrations\201511221252464_File1.Designer.cs">
+      <DependentUpon>201511221252464_File1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\File.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -289,7 +294,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\Info.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Employees.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -307,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511181819093_New.resx">
       <DependentUpon>201511181819093_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511221252464_File1.resx">
+      <DependentUpon>201511221252464_File1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
