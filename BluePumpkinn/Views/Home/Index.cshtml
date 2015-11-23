@@ -95,26 +95,26 @@
                 </div>
             </div>
             <div class="row mt">
-                <div class="col-lg-3">
-                    <p class="capitalize">1</p>
+                <div class="col-lg-3">   
+                    <i class="fa fa-user"></i><i class="fa fa-plus"></i>
                     <h4>Register or Sign in</h4>
-                    <p>First, if aren't registered, you have to register yourself into this website. While You are registered, you can sign in. You can find Register and Sign in buttons on top right corner of this site</p>
+                    <p class="text-justify">First, if aren't registered, you have to register yourself into this website. While You are registered, you can sign in. You can find Register and Sign in buttons on top right corner of this site</p>
                 </div>
                 <div class="col-lg-3">
-                    <p class="capitalize">2</p>
+                    <i class="fa fa-crosshairs"></i>
                     <h4>Pick event</h4> 
-                    <p>Pick Your event from a ready-made events.</p>
+                    <p class="text-justify">Pick Your event from a ready-made events.</p>
                 </div>
                 <div class="col-lg-3">
-                    <p class="capitalize">3</p>
+                    <i class="fa fa-clock-o"></i>
                     <h4>Wait for confirmation</h4>
-                    <p>You have to wait for admin to confirm Your participation in the chosen event od competition.</p>
+                    <p class="text-justify">You have to wait for admin to confirm Your participation in the chosen event od competition.</p>
                 </div>
 
                 <div class="col-lg-3">
-                    <p class="capitalize">4</p>
+                    <i class="fa fa-gamepad"></i>
                     <h4>Participate</h4>
-                    <p>When admin approved event or competition, You get notification about it and can instantly participate.</p>
+                    <p class="text-justify">When admin approved event or competition, You get notification about it and can instantly participate.</p>
                 </div>
             </div><!-- /row -->
         </div><!-- /container -->
@@ -219,28 +219,29 @@
     <div class="container">
         <div class="row mt centered">
             <div class="col-lg-4 col-lg-offset-4">
+                <i class="fa fa-trophy fa-4x"></i>
                 <h3>Recent Winners</h3>
                 <hr>
             </div><!-- /col-lg-4 -->
         </div><!-- /row -->
         <div class="row mt">
             <div class="col-lg-4 centered si">
-                <i class="fa fa-flask"></i>
-                <h4>Chemistry League</h4>
+                <i class="fa fa-music"></i>
+                <h4>Karaoke Marathon</h4>
                 <p>First prize: James Franco</p>
             </div>
             <div class="col-lg-4 centered si">
-                <i class="fa fa-eye"></i>
-                <h4>Investigation Competition</h4>
+                <i class="fa fa-rocket"></i>
+                <h4>Speed Climbing</h4>
                 <p>Winners: White Eagle Team</p>
             </div>
             <div class="col-lg-4 centered si">
-                <i class="fa fa-mobile"></i>
+                <i class="fa fa-globe"></i>
                 <h4>Geocaching Time-Rally</h4>
                 <p>Winners: Jessica Biel and Silvester Stallone</p>
             </div>
             <div class="col-lg-4 centered si">
-                <i class="fa fa-cog"></i>
+                <i class="fa fa-cogs"></i>
                 <h4>Engineering Competition</h4>
                 <p>Winner: Jose Gonzalez</p>
             </div>
@@ -250,9 +251,9 @@
                 <p>Winnesr: IT Department Team</p>
             </div>
             <div class="col-lg-4 centered si">
-                <i class="fa fa-heart"></i>
-                <h4>Best Marketing Story</h4>
-                <p>Winners: Barack Obama and Angela Merkel</p>
+                <i class="fa fa-money"></i>
+                <h4>Employee of the Year</h4>
+                <p>Winner: Ahmad El Mohammad</p>
             </div>
         </div><!-- /row -->
     </div><!-- /container -->
@@ -387,7 +388,8 @@
     <div id="cta-bar">
         <div class="container">
             <div class="row centered">
-                <a href="#"><h4>Do You Want To Create A New Event?</h4></a>
+                @Html.ActionLink("Do you Want To Create a New Event?", "EventForm")
+            @*    <a href="#"><h4>Do You Want To Create A New Event?</h4></a>*@
             </div>
         </div><!-- /container -->
     </div><!-- /cta-bar -->

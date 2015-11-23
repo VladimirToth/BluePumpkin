@@ -30,5 +30,12 @@ namespace BluePumpkinn.Controllers
 
             return View();
         }
+
+        //[RequireHttps]
+        //public ActionResult EventForm()
+        //{
+        //        return View();
+            
+        //}
     }
 }
