@@ -14,7 +14,7 @@ namespace BluePumpkinn.Controllers
             return View();
         }
 
-        [Authorize(Roles="Admin")]
+        [Authorize(Roles="Administrator")]
         public ActionResult About()
         {
             
