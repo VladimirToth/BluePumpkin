@@ -20,6 +20,7 @@ namespace BluePumpkinn.Migrations
         {
             //  This method will be called after migrating to the latest version.
         
+            
             if (!context.Roles.Any())
             {
                 var roleStore = new RoleStore<IdentityRole>(context);
@@ -53,6 +54,7 @@ namespace BluePumpkinn.Migrations
                     TwoFactorEnabled=false,
                     PhoneNumberConfirmed=false,
                     LockoutEnabled=true
+                    
                 };
                 userManager.CreateAsync(admin, "Password@123").Wait();
                 userManager.AddToRolesAsync(admin.Id, "Administrator").Wait();

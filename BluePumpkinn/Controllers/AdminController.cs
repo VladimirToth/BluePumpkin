@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using System.Net;
 using BluePumpkinn.Models;
 using System.Linq;
+using System.Data;
 
 namespace BluePumpkinn.Controllers
 {
@@ -54,6 +55,75 @@ namespace BluePumpkinn.Controllers
                 return HttpNotFound();
             }
             return View(user);
+        }
+
+        // GET: Users/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include="Email")]ApplicationUser user)
+            //public ActionResult Create([Bind(Include = "Name, EnrollmentDate")]Student student)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DataException)
+            {
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+            }
+            return View(user);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            ApplicationUser user = db.Users.Find(id);
+
+            return View(user);
+        }
+
+       
+        [HttpPost]
+        public ActionResult Edit(string id)
+        {
+            var user = db.Users.Find(id);
+            return View();
+        }
+
+        
+        public ActionResult Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ApplicationUser user = db.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
+
+        // POST: Students/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(string id)
+        {
+            ApplicationUser user = db.Users.Find(id);
+            db.Users.Remove(user);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
