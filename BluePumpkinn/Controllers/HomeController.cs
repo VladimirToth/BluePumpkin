@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BluePumpkinn.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -31,11 +32,11 @@ namespace BluePumpkinn.Controllers
             return View();
         }
 
-        //[RequireHttps]
-        //public ActionResult EventForm()
-        //{
-        //        return View();
-            
-        //}
+        [RequireHttps]
+        public ActionResult EventForm(EventsModels model)
+        {
+            return View(model);
+
+        }
     }
 }
