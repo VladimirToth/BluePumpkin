@@ -161,16 +161,36 @@ namespace BluePumpkinn.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model, HttpPostedFile upload)
         {
             if (ModelState.IsValid)
             {
+
+                File avatar=null;
+                if (upload != null && upload.ContentLength > 0)
+                {
+                    avatar = new File
+                    {
+                        FileName = System.IO.Path.GetFileName(upload.FileName),
+                        FileType = FileType.Avatar,
+                        ContentType = upload.ContentType
+                    };
+                    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                    {
+                        avatar.Content = reader.ReadBytes(upload.ContentLength);
+                    }
+                    
+                }
+
+
                 var user = new ApplicationUser 
                 { 
                     UserName = model.Email, 
                     Email = model.Email, 
-                    BirthDate= model.BirthDate
+                    BirthDate= model.BirthDate,
+                    //Photo=avatar
                 };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

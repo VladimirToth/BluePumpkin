@@ -87,6 +87,8 @@ namespace BluePumpkinn.Models
 
         [Required]
         public DateTime BirthDate { get; set; }
+
+        public virtual ICollection<File> Files { get; set; }
     }
 
     public class ResetPasswordViewModel
