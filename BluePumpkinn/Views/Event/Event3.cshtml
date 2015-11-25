@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Christmas Raffle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2 mt">
+            <h1>Christmas Raffle</h1>
+            <p class="mt">
+                A Christmas raffle offers a fund-raising option with a festive twist. A raffle with a holiday theme
+                works on its own or as part of a larger fundraiser for the group.
+            </p>
+            <a href="/Account/Login"><button type="button" class="btn btn-default btn-lg">Join</button></a>
+        </div>
+    </div><!-- /row -->
+</div><!-- /container -->
+
+<div>
+    @Html.ActionLink("Back to Home page", "Index", "Home/Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+}
+@section Styles {
+    @Styles.Render("~/Content/css")
+}

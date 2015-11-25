@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Event2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2 mt">
+            <h1>Chess Tournament</h1>
+            <p class="mt">
+                Love to play chess already? Want to learn how? Want to meet new people? Join us! We welcome members
+                of all levels! We are a friendly group and you will get a warm welcome from the first time you come
+                to one of our events. We make it a point to ensure you can always find us and that any questions you
+                have are answered. The events themselves are typically informal and people show up and play anyone
+                who wants to get a new game started. Some people like to play regular long games and others like speed
+                games. We have strong players and those that just know the basics. Recommendations from members of
+                convenient locations and times are welcomed. We usually meet somewhere like Panera but occasionally
+                may change it up to meet at a nice bar or somewhere we can play outside. Thus far events usually happen
+                once a month and have a good turn out so that everyone gets to play a few games. 
+            </p>
+            <a href="/Account/Login"><button type="button" class="btn btn-default btn-lg">Join</button></a>
+        </div>
+    </div><!-- /row -->
+</div><!-- /container -->
+
+<div>
+    @Html.ActionLink("Back to Home page", "Index", "Home/Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+}
+@section Styles {
+    @Styles.Render("~/Content/css")
+}

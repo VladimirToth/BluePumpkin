@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Football Tournamnet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2 mt">
+            <h1>Football Tournament</h1>
+            <p class="mt">
+                With more than 3,000 members we are the largest flag football group in the world.  We are a co-ed
+                group of flag football fanatics.   Our league is 100% FREE.  No fees or donations required!  We
+                welcome novice and experienced adult players of all ages.  Our motto is safety first, then sportsmanship,
+                fun, exercise, and competition.  Come make new friends, have fun, and get great exercise at the beach.
+                This meetup page is dedicated to our "competitive league."  However, our group   also offers FREE weekly
+                "pick-up games" EVERY Saturday and Sunday at 11 AM 52 weeks per year. Click on the link just below to join
+                our "sister" group if you want to play FREE "pick up" flag football.
+            </p>
+            <a href="/Account/Login"><button type="button" class="btn btn-default btn-lg">Join</button></a>
+        </div>
+    </div><!-- /row -->
+</div><!-- /container -->
+
+<div>
+    @Html.ActionLink("Back to Home page", "Index", "Home/Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+}
+@section Styles {
+    @Styles.Render("~/Content/css")
+}

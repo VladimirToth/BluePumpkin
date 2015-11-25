@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Employee of the Month";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2 mt">
+            <h1>Employee of the Month</h1>
+            <p class="mt">
+                The UAB Employee of the Month Program seeks to recognize and reward those staff members whose
+                contributions best exemplify these traits. In doing so, we not only show appreciation for outstanding
+                individual achievement, but more importantly, we communicate to all, publicly and consistently, the
+                significance of these values to the University.  Included among the values essential to achieving
+                Blue Pumpkin’s mission and vision are Accountability, Collaboration, Service, Commitment, Diversity,
+                Can-do Attitude and Ethical Conduct.
+            </p>
+            <a href="/Account/Login"><button type="button" class="btn btn-default btn-lg">Join</button></a>
+        </div>
+    </div><!-- /row -->
+</div><!-- /container -->
+
+<div>
+    @Html.ActionLink("Back to Home page", "Index", "Home/Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+}
+@section Styles {
+    @Styles.Render("~/Content/css")
+}

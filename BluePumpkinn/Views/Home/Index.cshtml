@@ -1,7 +1,9 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+@*@{
+    var event1 = Html.Action("Index", "Event");
+}*@
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,24 +139,25 @@
     </div><! --/cta01 -->*@
     <! ========== ACTUAL EVENTS SECTION ================================================================================================
     =============================================================================================================================>
-    <div class="container">
+     <div class="container">
         <div class="row mt centered">
             <div class="col-lg-4 col-lg-offset-4">
-                <button type="button" class="btn btn-theme btn-lg">Register or Sign in</button>
+                <a href="/Account/Login"><button type="button" class="btn btn-theme btn-lg">Sign in</button></a>
+                <a href="/Account/Register"><button type="button" class="btn btn-theme btn-lg">Register</button></a>
             </div>
         </div><!-- /row -->
-        <div class="row mt">
+        <div id="eventsall" class="row mt">
             <div class="col-lg-4 centered si">
-                    <a class="b-link-fade b-animate-go" href="#">
+                    <a class="b-link-fade b-animate-go" href="@Url.Action("Event1", "Event")">
                         <img width="350" height="250" src="~/Images/charity.jpeg" alt="" />
                         <div class="b-wrapper">
-                            <h4 class="b-from-left b-animate b-delay03">Teambuilding</h4>
+                            <h4 class="b-from-left b-animate b-delay03">Charity Group</h4>
                             <p class="b-from-right b-animate b-delay03">View Details</p>
                         </div>
                     </a>
               </div>
             <div class="col-lg-4 centered si desc">
-                    <a class="b-link-fade b-animate-go" href="#">
+                    <a class="b-link-fade b-animate-go" href="@Url.Action("Event2", "Event")">
                         <img width="350" height="250" src="~/Images/chess.jpeg" alt="" />
                         <div class="b-wrapper">
                             <h4 class="b-from-left b-animate b-delay03">Chess Tournament</h4>
@@ -163,16 +166,16 @@
                     </a>
             </div>
             <div class="col-lg-4 centered si desc">
-                <a class="b-link-fade b-animate-go" href="#">
+                <a class="b-link-fade b-animate-go" href="@Url.Action("Event3", "Event")">
                     <img width="350" height="250" src="~/Images/christmas.jpeg" alt="" />
                     <div class="b-wrapper">
-                        <h4 class="b-from-left b-animate b-delay03">Christmas Party</h4>
+                        <h4 class="b-from-left b-animate b-delay03">Christmas Raffle</h4>
                         <p class="b-from-right b-animate b-delay03">View Details</p>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 centered si desc">
-                <a class="b-link-fade b-animate-go" href="#">
+                <a class="b-link-fade b-animate-go" href="@Url.Action("Event4", "Event")">
                     <img width="350" height="250" src="~/Images/employee.jpg" alt="" />
                     <div class="b-wrapper">
                         <h4 class="b-from-left b-animate b-delay03">Employee of the Month Competition</h4>
@@ -181,7 +184,7 @@
                 </a>
             </div>
             <div class="col-lg-4 centered si desc">
-                <a class="b-link-fade b-animate-go" href="#">
+                <a class="b-link-fade b-animate-go" href="@Url.Action("Event5", "Event")">
                     <img width="350" height="250" src="~/Images/football.jpeg" alt="" />
                     <div class="b-wrapper">
                         <h4 class="b-from-left b-animate b-delay03">Football Tournament</h4>
@@ -190,10 +193,10 @@
                 </a>
             </div>
             <div class="col-lg-4 centered si desc">
-                <a class="b-link-fade b-animate-go" href="#">
+                <a class="b-link-fade b-animate-go" href="@Url.Action("Event6", "Event")">
                     <img width="350" height="250" src="~/Images/global_438001916.jpeg" alt="" />
                     <div class="b-wrapper">
-                        <h4 class="b-from-left b-animate b-delay03">Yearly Company Meeting</h4>
+                        <h4 class="b-from-left b-animate b-delay03">Company Vision Meeting</h4>
                         <p class="b-from-right b-animate b-delay03">View Details</p>
                     </div>
                 </a>
@@ -349,6 +352,7 @@
 
     <div id="white">
         <div id="contact" class="container">
+
             <div class="row mt">
                 <div class="col-lg-4 col-lg-offset-4 centered">
                     <h3>Contact Us</h3>
@@ -358,7 +362,8 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
                 </div>
             </div><! --/row -->
         </div><!-- /container -->
-        <div id="map"></div>
+        @*<div id="map"></div>*@
+        <div class="img-responsive"><img class="img-responsive" src="~/Images/mapka.png" alt="" /></div>
     </div><!-- /white -->
     <! ========== CALL TO ACTION BAR ===============================================================================================
     =============================================================================================================================>

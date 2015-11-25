@@ -22,7 +22,15 @@ namespace BluePumpkinn
             routes.MapRoute(
                 name: "Events",
                 url: "Home/Events/{id}",
-                defaults: new { controller = "Home", action = "EventForm", id = UrlParameter.Optional});
+                defaults: new { controller = "Home", action = "EventForm", id = UrlParameter.Optional}
+            );
+
+            routes.MapRoute(
+                name: "Event",
+                url: "Event/{action}/{id}",
+                defaults: new { controller = "Event", action = "Event1", id = UrlParameter.Optional }
+            );
         }
+
     }
 }

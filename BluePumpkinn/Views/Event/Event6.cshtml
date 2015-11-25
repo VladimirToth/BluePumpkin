@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Company Vision Meeting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2 mt">
+            <h1>Company Vision Meeting</h1>
+            <p class="mt">
+                We are delighted to invite you to this year’s Visionary Conference, co-hosted by Visionary and VISION 2020 UK
+                on 20-21 October in Edinburgh.
+                This year’s theme is ‘Leading for Change – Delivering the Future Together’ which is reflected throughout the
+                16 workshops on offer to delegates over the two-day programme.  The workshops will cover a range of topics
+                including children, fundraising, rehabilitation and research.
+                The conference is designed to provide networking and learning opportunities for local societies, national charities
+                and other professions. We hope all delegates can share and take away learnings from the two days to improve the
+                quality of service provided to people with sight loss across the UK.
+                
+                This is the sixth annual Visionary Conference and this year has been designed to provide more benefits to delegates,
+                including extended information sharing and some new highlights.
+                Please find attached, the programme for this year’s conference which is subject to change.
+            </p>
+            <a href="/Account/Login"><button type="button" class="btn btn-default btn-lg">Join</button></a>
+        </div>
+    </div><!-- /row -->
+</div><!-- /container -->
+
+<div>
+    @Html.ActionLink("Back to Home page", "Index", "Home/Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+}
+@section Styles {
+    @Styles.Render("~/Content/css")
+}
