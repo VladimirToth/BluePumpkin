@@ -25,38 +25,42 @@
     <!-- JavaScripts needed at the beginning
     ================================================== -->
     <script type="text/javascript" src="http://alvarez.is/demo/marco/assets/js/twitterFetcher_v10_min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+   
     <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
    @* <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>*@
-    @*<script type="text/javascript">
-        // When the window has finished loading create our google map below
-        google.maps.event.addDomListener(window, 'load', init);
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
 
-        function init() {
-            // Basic options for a simple Google Map
-            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-            var mapOptions = {
-                // How zoomed in you want the map to start at (always required)
-                zoom: 11,
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 11,
 
-                scrollwheel: false,
+                    scrollwheel: false,
 
-                // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(40.6700, -73.9400), // New York
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(40.6700, -73.9400), // New York
 
-                // How you would like to style the map.
-                // This is where you would paste any style found on Snazzy Maps.
-                styles: [	{		featureType:'water',		stylers:[{color:'#74c9be'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#f2f2f2'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#444444'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
-            };
+                    // How you would like to style the map.
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [	{		featureType:'water',		stylers:[{color:'#74c9be'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#f2f2f2'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#444444'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
+                };
 
-            // Get the HTML DOM element that will contain your map
-            // We are using a div with id="map" seen below in the <body>
-            var mapElement = document.getElementById('map');
+                // Get the HTML DOM element that will contain your map
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
 
-            // Create the Google Map using out element and options defined above
-            var map = new google.maps.Map(mapElement, mapOptions);
-        }
-    </script>*@
-
+                // Create the Google Map using out element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+            }
+        </script>
+    <!-- Collapse efects for FAQ section -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <!-- Main Jquery & Hover Effects. Should load first -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -78,7 +82,7 @@
             <div class="row centered">
                 <div class="col-lg-8 col-lg-offset-2 mt">
                     <h1 class="animation slideDown">We are Blue Pumpkinn. Changing the world since 1995.</h1>
-                    <p class="mt"><a href="#"><button type="button" class="btn btn-cta btn-lg">More about Us</button></a></p>
+                    <p class="mt"><a href="#company"><button type="button" class="btn btn-cta btn-lg">More about Us</button></a></p>
                 </div>
 
             </div><!-- /row -->
@@ -199,7 +203,7 @@
     <! ========== BLACK SECTION - COMPANY ========================================================================================
     =============================================================================================================================>
     <div id="black">
-        <div class="container">
+        <div id="company" class="container">
             <div class="row mt centered">
                 <div class="col-lg-4 col-lg-offset-4">
                     <h3>Our Company</h3>
@@ -305,46 +309,13 @@
             </div><! --/row -->
         </div><! --/container -->
     </div><! --/white -->*@
-
-    <! ========== BLACK SECTION =================================================================================================
-    =============================================================================================================================>
-    @*<div id="black">
-        <div class="container pt">
-            <div class="row mt centered">
-                <div class="col-lg-3">
-                    <p><i class="fa fa-instagram"></i></p>
-                    <h1>21.337</h1>
-                    <hr>
-                    <h4>Pictures Taken</h4>
-                </div>
-                <div class="col-lg-3">
-                    <p><i class="fa fa-music"></i></p>
-                    <h1>9.764</h1>
-                    <hr>
-                    <h4>Songs Listened</h4>
-                </div>
-                <div class="col-lg-3">
-                    <p><i class="fa fa-trophy"></i></p>
-                    <h1>107</h1>
-                    <hr>
-                    <h4>Awards Earned</h4>
-                </div>
-                <div class="col-lg-3">
-                    <p><i class="fa fa-ticket"></i></p>
-                    <h1>209</h1>
-                    <hr>
-                    <h4>Movies Watched</h4>
-                </div>
-            </div><!-- /row -->
-        </div><!-- /container -->
-    </div><!-- /black -->*@
     <! ========== TESTIMONIAL CAROUSEL ==========================================================================================
     =============================================================================================================================>
 
     <div class="container">
         <div class="row mt">
             <div class="col-lg-4 col-lg-offset-4 centered">
-                <h3>Honest Testimonials</h3>
+                <h3>This is how our employees see our company:</h3>
                 <hr>
             </div>
         </div><! --/row -->
@@ -355,13 +326,17 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</h2>
-                            <h5>Paul Morrison - BlackTie.co</h5>
+                            <h2>This company is that good, I will provide some refugees for it.</h2>
+                            <h5>Angela Merkel - secret EU commander</h5>
                         </div>
 
                         <div class="item">
-                            <h2>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h2>
-                            <h5>Mike Wellington - BlackTie.co</h5>
+                            <h2>I'm definitely happy to be part of this team.</h2>
+                            <h5>Sherif Kenawy - Aptech Europe Trainer</h5>
+                        </div>
+                        <div class="item">
+                            <h2>Welcome to the coolest company on the Earth.</h2>
+                            <h5>Peter Hanak - Participant</h5>
                         </div>
                     </div><!-- /carousel-inner -->
 
@@ -377,6 +352,8 @@
             <div class="row mt">
                 <div class="col-lg-4 col-lg-offset-4 centered">
                     <h3>Contact Us</h3>
+                    @*<p class="text-justify">This is pilot version of our social hub. Some of the functionality is subject to change.
+In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepumpkin.com</p>*@
                     <hr>
                 </div>
             </div><! --/row -->
@@ -393,6 +370,224 @@
             </div>
         </div><!-- /container -->
     </div><!-- /cta-bar -->
+    <! ========== BLACK SECTION =================================================================================================
+    =============================================================================================================================>
+    <div id="white">
+        <div class="container">
+            <div class="row centered">
+                <div class="centered">
+                    <h3>Frequently asked questions (FAQ)</h3>
+                    <hr>
+                </div>
+                <dv class="centered">
+                    <h3 class="text-justify">
+                        This website allows our employees ability to manage social gatherings in hope of creating
+                        great working environment in our company. Each employee can create, and take part in various events.
+                        This document is offering troubleshooting for various problems you can encounter, while using
+                        BPEM(Blue Pumpkin Event Manager).
+                    </h3>
+
+                    <h4 class="text-justify">In case you encounter unanswered problem, please contact support@bluepumpkin.com.</h4>
+                    <!-- /FAQ QUESTIONS-ANSWERS SECTION-->
+                    <div class="btn-group-vertical">
+                        <!-- /1.FAQ-->
+                            <button type="button" class="btn btn-default btn-md" id="myBtn">1. How can I create my new profile?</button>
+
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                                            <h4 class="modal-title">1. How can I create my new profile?</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>New profile can be created by clicking on SignIn button in top right corner, next you fill in your email, and password. Next you will receive </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- /2.FAQ-->
+                        <button type="button" class="btn btn-default btn-md" id="myBtn1">2. How can I participate in a event?</button>
+
+                        <div class="modal fade" id="myModal1" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                                        <h4 class="modal-title">2. How can I participate in a event?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>You can participate in a event by clicking on plus sign on event tile. 
+                                        In case you are logged in, you will be able to participate in a event.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <!-- /3.FAQ-->
+                        <button type="button" class="btn btn-default btn-md" id="myBtn2">3. How can I create new event?</button>
+
+                        <div class="modal fade" id="myModal2" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                                        <h4 class="modal-title">3. How can I create new event?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            You can create new event by filling create new event form. You can access this form by scrolling down on main page,
+                                            and clicking on teal link create event form.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <!-- /4.FAQ-->
+                        <button type="button" class="btn btn-default btn-md" id="myBtn3">4. Why is my event not visible?</button>
+
+                        <div class="modal fade" id="myModal3" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                                        <h4 class="modal-title">4. Why is my event not visible?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            After creating an event you need to wait for approval by site admin. After your event is approved, other employees
+                                            can join in.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <!-- /5.FAQ-->
+                        <button type="button" class="btn btn-default btn-md" id="myBtn4">5. How can I view details of an event?</button>
+
+                        <div class="modal fade" id="myModal4" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                                        <h4 class="modal-title">5. How can I view details of an event?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            By clicking on event image on main page of BPEM you are redirected to details of an event.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <!-- /6.FAQ-->
+                        <button type="button" class="btn btn-default btn-md" id="myBtn5">6. Where can I see competition results?</button>
+
+                        <div class="modal fade" id="myModal5" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                                        <h4 class="modal-title">6. Where can I see competition results?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            Competition results are displayed on main page in recent winners section.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <!-- /7.FAQ-->
+                        <button type="button" class="btn btn-default btn-md" id="myBtn6">7. What is difference between meetings, games, and competitions?</button>
+
+                        <div class="modal fade" id="myModal6" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                                        <h4 class="modal-title">7. What is difference between meetings, games, and competitions?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            Usually games, and competions have winners. In case of competitions those winners can win prices.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <!-- /8.FAQ-->
+                        <button type="button" class="btn btn-default btn-md" id="myBtn7">8. How can I log in to the application?</button>
+
+                        <div class="modal fade" id="myModal7" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                                        <h4 class="modal-title">8. How can I log in to the application?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            You can log into application by clicking on Login button in top right corner. You will have several posibilties for login.
+                                            You can login with your email, and password. Also you can use you facebook, gmail, or linkedin profile.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div><!-- /black -->
     <! ========== FOOTER ========================================================================================================
     =============================================================================================================================>
 
@@ -439,17 +634,18 @@
                 <div class="col-lg-3">
                     <h4>Latest Posts</h4>
                     <p>
-                        <i class="fa fa-angle-right"></i> A post with an image<br />
-                        <i class="fa fa-angle-right"></i> Other post with a video<br />
-                        <i class="fa fa-angle-right"></i> A full width post<br />
-                        <i class="fa fa-angle-right"></i> We talk about something nice<br />
-                        <i class="fa fa-angle-right"></i> Yet another single post<br />
+                        <i class="fa fa-angle-right"></i> Thanks for building this page.<br />
+                        <i class="fa fa-angle-right"></i> Have a nivce day Cristiano.<br />
+                        <i class="fa fa-angle-right"></i> We will win the next competition, i promise.<br />
+                        <i class="fa fa-angle-right"></i> Nobody here?<br />
+                        <i class="fa fa-angle-right"></i> I need more peaple, let's join.<br />
                     </p>
                 </div><!-- /col-lg-3 -->
                 <!-- NEW PROJECT -->
                 <div class="col-lg-3">
                     <h4>Latest proposed Event</h4>
-                    <a href="#"><img class="img-responsive" src="assets/img/portfolio/port03.jpg" alt="" /></a>
+                    @*<a href="#"><img class="img-responsive" src="assets/img/portfolio/port03.jpg" alt="" /></a>*@
+                <p>There isn't any new proposed event.</p>
                 </div><!-- /col-lg-3 -->
             </div><! --/row -->
         </div><!-- /container -->
@@ -473,7 +669,55 @@
 			});
 		});
     </script>
+    <script>
+        $(document).ready(function () {
+            $("#myBtn").click(function () {
+                $("#myModal").modal("toggle");
+            });
+        });
 
+        $(document).ready(function () {
+            $("#myBtn1").click(function () {
+                $("#myModal1").modal("toggle");
+            });
+        });
+
+        $(document).ready(function () {
+            $("#myBtn2").click(function () {
+                $("#myModal2").modal("toggle");
+            });
+        });
+
+        $(document).ready(function () {
+            $("#myBtn3").click(function () {
+                $("#myModal3").modal("toggle");
+            });
+        });
+
+        $(document).ready(function () {
+            $("#myBtn4").click(function () {
+                $("#myModal4").modal("toggle");
+            });
+        });
+
+        $(document).ready(function () {
+            $("#myBtn5").click(function () {
+                $("#myModal5").modal("toggle");
+            });
+        });
+
+        $(document).ready(function () {
+            $("#myBtn6").click(function () {
+                $("#myModal6").modal("toggle");
+            });
+        });
+
+        $(document).ready(function () {
+            $("#myBtn7").click(function () {
+                $("#myModal7").modal("toggle");
+            });
+        });
+    </script>
 
 </body>
 </html>
