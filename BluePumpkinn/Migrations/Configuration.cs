@@ -15,6 +15,7 @@ namespace BluePumpkinn.Migrations
             AutomaticMigrationsEnabled = false;
             ContextKey = "BluePumpkinn.Models.ApplicationDbContext";
         }
+ 
 
         protected override void Seed(BluePumpkinn.Models.ApplicationDbContext context)
         {
