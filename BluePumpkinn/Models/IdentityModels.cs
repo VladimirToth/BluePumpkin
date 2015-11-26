@@ -12,7 +12,7 @@ namespace BluePumpkinn.Models
     public class ApplicationUser : IdentityUser
     {
         public DateTime BirthDate { get; set; }
-        //public byte[] Photo { get; set; }
+        public virtual ICollection<File> Photo { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -36,7 +36,7 @@ namespace BluePumpkinn.Models
             return new ApplicationDbContext();
         }
 
-        //public DbSet<File> Files { get; set; }
+        public DbSet<File> Files { get; set; }
 
 
     }

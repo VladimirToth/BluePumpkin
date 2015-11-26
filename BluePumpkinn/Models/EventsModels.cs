@@ -8,13 +8,10 @@ using System.Web.Mvc;
 
 namespace BluePumpkinn.Models
 {
-    public class EventParticipant
-    {
+    //public class EventParticipant
+    //{
 
-        public bool Status { get; set; }
-        public ICollection<Event> Events { get; set; }
-        
-    }
+    //}
 
     public class EventType
     {
@@ -45,11 +42,10 @@ namespace BluePumpkinn.Models
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
-        public int EventTypeID { get; set; }
-        public int EventParticipantID { get; set; }
+        public int EventTypeId { get; set; }
 
-        public virtual EventType EventType { get; set; }
-        public virtual EventParticipant EventParticipant { get; set; }
+        public EventType EventType { get; set; }
+
 
     }
 

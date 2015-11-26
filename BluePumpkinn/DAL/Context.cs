@@ -20,8 +20,8 @@ namespace BluePumpkinn.DAL
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Event> Event { get; set; }
-        public DbSet<EventType> EventType { get; set; }
+        public virtual DbSet<Event> Event { get; set; }
+        public virtual DbSet<EventType> EventType { get; set; }
 
     }
 }

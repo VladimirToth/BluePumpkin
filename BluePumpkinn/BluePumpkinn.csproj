@@ -173,7 +173,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\Context.cs" />
-    <Compile Include="DAL\Initializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,18 +192,6 @@
     <Compile Include="Migrations\201511221252464_File1.Designer.cs">
       <DependentUpon>201511221252464_File1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511261857589_Changes.cs" />
-    <Compile Include="Migrations\201511261857589_Changes.Designer.cs">
-      <DependentUpon>201511261857589_Changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511261901449_shs.cs" />
-    <Compile Include="Migrations\201511261901449_shs.Designer.cs">
-      <DependentUpon>201511261901449_shs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511261905355_bezphoto.cs" />
-    <Compile Include="Migrations\201511261905355_bezphoto.Designer.cs">
-      <DependentUpon>201511261905355_bezphoto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\File.cs" />
@@ -215,10 +202,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database.mdf" />
-    <Content Include="App_Data\Database_log.ldf">
-      <DependentUpon>Database.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -326,7 +309,9 @@
     <Content Include="Views\Event\Event5.cshtml" />
     <Content Include="Views\Event\Event6.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -343,15 +328,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511221252464_File1.resx">
       <DependentUpon>201511221252464_File1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511261857589_Changes.resx">
-      <DependentUpon>201511261857589_Changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511261901449_shs.resx">
-      <DependentUpon>201511261901449_shs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511261905355_bezphoto.resx">
-      <DependentUpon>201511261905355_bezphoto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
