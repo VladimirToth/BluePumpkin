@@ -45,6 +45,12 @@ namespace BluePumpkinn.Migrations
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new ApplicationUserManager(userStore);
 
+                System.IO.FileStream file = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\pumpkin_images\pumpkin_employee_photo\female5.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                byte[] data = new byte[file.Length];
+                file.Read(data, 0, data.Length);
+                file.Close();
+
+
                 var admin = new ApplicationUser
                 {
                     Email = "administrator@bluepumpkin.com",
@@ -54,7 +60,8 @@ namespace BluePumpkinn.Migrations
                     BirthDate = DateTime.Parse("1970-12-23").Date,
                     TwoFactorEnabled=false,
                     PhoneNumberConfirmed=false,
-                    LockoutEnabled=true
+                    LockoutEnabled=true,
+                    Photo=data
                     
                 };
                 userManager.CreateAsync(admin, "Password@123").Wait();
@@ -69,7 +76,8 @@ namespace BluePumpkinn.Migrations
                     BirthDate = DateTime.Parse("1985-12-15").Date,
                     TwoFactorEnabled = false,
                     PhoneNumberConfirmed = false,
-                    LockoutEnabled = true
+                    LockoutEnabled = true,
+                    Photo=data
                 };
                 userManager.CreateAsync(user1, "Password@123").Wait();
                 userManager.AddToRolesAsync(user1.Id, "Employee").Wait();
