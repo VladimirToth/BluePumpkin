@@ -508,9 +508,9 @@ namespace BluePumpkinn.Controllers
         {
             if (Url.IsLocalUrl(returnUrl))
             {
-                return Redirect(returnUrl);
+                return Redirect(returnUrl + "?showDialog=true");
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home", new { showDialog = true });
         }
 
         //If the user accidently deletes the confirmation email, or the email never arrives, they will need the confirmation link sent again.The following code  enable this.

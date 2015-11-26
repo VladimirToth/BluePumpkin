@@ -10,7 +10,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                <h4 class="modal-title" id="myModalLabel">Title</h4>
+                <h4 class="modal-title" id="myModalLabel">Add new employee</h4>
             </div>
             <div class="modal-body">
                 <div id="modal-content">
@@ -39,34 +39,56 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @item.BirthDate.Date.ToString("dd.MM.yyyy")
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-       
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @item.BirthDate.Date.ToString("dd.MM.yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
 
 <div class="row">
     <div class="col-mod-12">
-        <a id="btnNew" data-toogle="modal" href="#myModal" class="btn btn-primary btn-lg">Add new user</a>
+        <a id="btnNew" href="#" onclick="showModal();" class="btn btn-primary btn-lg">Add new user</a>
     </div>
 </div>
 <br />
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+@section scripts {
+
+    <script language="javascript">
+
+        function showModal() {
+            $('#myModal').modal();
+        }
+
+    </script>
+
+
+@*<script language="javascript">
+        @if (Request["showDialog"] != null)
+        {
+            @("$('#myModal').modal()")
+        }
+
+</script>*@
+
+}
