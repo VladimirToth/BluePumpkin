@@ -4,6 +4,23 @@
     ViewBag.Title = "Index";
 }
 
+//https://www.youtube.com/watch?v=JlCKBNABEzE
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="myModalLabel">Title</h4>
+            </div>
+            <div class="modal-body">
+                <div id="modal-content">
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <h2>Index</h2>
 
 
@@ -44,6 +61,12 @@
 
 </table>
 
-<p>
+<div class="row">
+    <div class="col-mod-12">
+        <a id="btnNew" data-toogle="modal" href="#myModal" class="btn btn-primary btn-lg">Add new user</a>
+    </div>
+</div>
+<br />
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
