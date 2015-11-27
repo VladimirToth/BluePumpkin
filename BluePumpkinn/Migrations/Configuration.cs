@@ -45,11 +45,35 @@ namespace BluePumpkinn.Migrations
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new ApplicationUserManager(userStore);
 
-                System.IO.FileStream file = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\pumpkin_images\pumpkin_employee_photo\female5.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                byte[] data = new byte[file.Length];
-                file.Read(data, 0, data.Length);
-                file.Close();
+                System.IO.FileStream file1 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\benoit-fleury.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                byte[] data1 = new byte[file1.Length];
+                file1.Read(data1, 0, data1.Length);
+                file1.Close();
 
+                System.IO.FileStream file2 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\carin-meier.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                byte[] data2 = new byte[file2.Length];
+                file2.Read(data2, 0, data1.Length);
+                file2.Close();
+
+                System.IO.FileStream file3 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\carin-meier.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                byte[] data3 = new byte[file3.Length];
+                file3.Read(data3, 0, data3.Length);
+                file3.Close();
+
+                System.IO.FileStream file4 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\carin-meier.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                byte[] data4 = new byte[file4.Length];
+                file4.Read(data1, 0, data4.Length);
+                file4.Close();
+
+                System.IO.FileStream file5 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\carin-meier.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                byte[] data5 = new byte[file5.Length];
+                file5.Read(data5, 0, data5.Length);
+                file5.Close();
+
+                System.IO.FileStream file6 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\carin-meier.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                byte[] data6 = new byte[file1.Length];
+                file6.Read(data6, 0, data6.Length);
+                file6.Close();
 
                 var admin = new ApplicationUser
                 {
@@ -61,7 +85,7 @@ namespace BluePumpkinn.Migrations
                     TwoFactorEnabled=false,
                     PhoneNumberConfirmed=false,
                     LockoutEnabled=true,
-                    Photo=data
+                    Photo=data1
                     
                 };
                 userManager.CreateAsync(admin, "Password@123").Wait();
@@ -77,7 +101,7 @@ namespace BluePumpkinn.Migrations
                     TwoFactorEnabled = false,
                     PhoneNumberConfirmed = false,
                     LockoutEnabled = true,
-                    Photo=data
+                    Photo=data2
                 };
                 userManager.CreateAsync(user1, "Password@123").Wait();
                 userManager.AddToRolesAsync(user1.Id, "Employee").Wait();
