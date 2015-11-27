@@ -176,7 +176,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511171735101_InitialCreate.cs" />
+    <Compile Include="Migrations\201511171735101_InitialCreate.Designer.cs">
+      <DependentUpon>201511171735101_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511172019194_Init.cs" />
+    <Compile Include="Migrations\201511172019194_Init.Designer.cs">
+      <DependentUpon>201511172019194_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511181819093_New.cs" />
+    <Compile Include="Migrations\201511181819093_New.Designer.cs">
+      <DependentUpon>201511181819093_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511221252464_File1.cs" />
+    <Compile Include="Migrations\201511221252464_File1.Designer.cs">
+      <DependentUpon>201511221252464_File1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511261931358_newone.cs" />
+    <Compile Include="Migrations\201511261931358_newone.Designer.cs">
+      <DependentUpon>201511261931358_newone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511261945243_Photo.cs" />
+    <Compile Include="Migrations\201511261945243_Photo.Designer.cs">
+      <DependentUpon>201511261945243_Photo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\File.cs" />
     <Compile Include="Models\EventsModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -297,6 +323,26 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511171735101_InitialCreate.resx">
+      <DependentUpon>201511171735101_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511172019194_Init.resx">
+      <DependentUpon>201511172019194_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511181819093_New.resx">
+      <DependentUpon>201511181819093_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511221252464_File1.resx">
+      <DependentUpon>201511221252464_File1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511261931358_newone.resx">
+      <DependentUpon>201511261931358_newone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511261945243_Photo.resx">
+      <DependentUpon>201511261945243_Photo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

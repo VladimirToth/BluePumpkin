@@ -36,5 +36,8 @@ namespace BluePumpkinn.Models
             return new ApplicationDbContext();
         }
 
+        public DbSet<File> Files { get; set; }
+
+
     }
 }

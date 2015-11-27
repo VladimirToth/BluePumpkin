@@ -166,21 +166,21 @@ namespace BluePumpkinn.Controllers
             if (ModelState.IsValid)
             {
 
-                //File avatar=null;
-                //if (upload != null && upload.ContentLength > 0)
-                //{
-                //    avatar = new File
-                //    {
-                //        FileName = System.IO.Path.GetFileName(upload.FileName),
-                //        FileType = FileType.Avatar,
-                //        ContentType = upload.ContentType
-                //    };
-                //    using (var reader = new System.IO.BinaryReader(upload.InputStream))
-                //    {
-                //        avatar.Content = reader.ReadBytes(upload.ContentLength);
-                //    }
+                File avatar=null;
+                if (upload != null && upload.ContentLength > 0)
+                {
+                    avatar = new File
+                    {
+                        FileName = System.IO.Path.GetFileName(upload.FileName),
+                        FileType = FileType.Avatar,
+                        ContentType = upload.ContentType
+                    };
+                    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                    {
+                        avatar.Content = reader.ReadBytes(upload.ContentLength);
+                    }
                     
-                //}
+                }
 
 
                 var user = new ApplicationUser 
