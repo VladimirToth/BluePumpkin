@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace BluePumpkinn.Models
 {
@@ -86,8 +87,20 @@ namespace BluePumpkinn.Models
         public string ConfirmPassword { get; set; }
 
         [Required]
+        public string Firstname { get; set; }
+
+        [Required]
+        public string Surname { get; set; }
+
+        [Required]
+        [Display(Name = "Birthday")]
         public DateTime BirthDate { get; set; }
 
+    }
+
+    public class ExtendedIdentityModel : RegisterViewModel
+    {
+        public HttpPostedFileBase UserProfilePicture { get; set; }
     }
 
     public class ResetPasswordViewModel

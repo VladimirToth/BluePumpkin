@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using BluePumpkinn.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace BluePumpkinn.Controllers
 {
@@ -161,59 +162,73 @@ namespace BluePumpkinn.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
-            //public async Task<ActionResult> Register(RegisterViewModel model, HttpPostedFile upload)
+        public async Task<ActionResult> Register(ExtendedIdentityModel model)
+
         {
-            if (ModelState.IsValid)
+            using (var context = new ApplicationDbContext())
             {
 
-                //File avatar=null;
-                //if (upload != null && upload.ContentLength > 0)
-                //{
-                //    avatar = new File
-                //    {
-                //        FileName = System.IO.Path.GetFileName(upload.FileName),
-                //        FileType = FileType.Avatar,
-                //        ContentType = upload.ContentType
-                //    };
-                //    using (var reader = new System.IO.BinaryReader(upload.InputStream))
-                //    {
-                //        avatar.Content = reader.ReadBytes(upload.ContentLength);
-                //    }
-                    
-                //}
-
-
-                var user = new ApplicationUser 
-                { 
-                    UserName = model.Email, 
-                    Email = model.Email, 
-                    BirthDate= model.BirthDate,
-                    //Photo=avatar
-                };
-
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                if (ModelState.IsValid)
                 {
-             
-                    // Send an email with this link
-                    //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirm your account");
 
-                    ViewBag.Message = "Check your email and confirm your account, you must be confirmed "
-                        + "before you can log in.";
+                    if (model.UserProfilePicture != null)
+                    {
+                        if (model.UserProfilePicture.ContentLength > (4 * 1024 * 1024))
+                        {
+                            ModelState.AddModelError("CustomError", "Image can not be lager than 4MB.");
+                            return View();
+                        }
+                        if (!(model.UserProfilePicture.ContentType == "image/jpeg" || model.UserProfilePicture.ContentType == "image/gif"))
+                        {
+                            ModelState.AddModelError("CustomError", "Image must be in jpeg or gif format.");
+                        }
+                    }
+                    byte[] data = new byte[model.UserProfilePicture.ContentLength];
+                    model.UserProfilePicture.InputStream.Read(data, 0, model.UserProfilePicture.ContentLength);
 
-                    return View("Info");
+                    var user = new ApplicationUser()
+                    {
+                        UserName = model.Email,
+                        Email = model.Email,
+                        BirthDate = model.BirthDate,
+                        Firstname = model.Firstname,
+                        Surname = model.Surname,
+                        Photo = data
+                    };
 
+                    var result = await UserManager.CreateAsync(user, model.Password);
+
+
+                    var roleStore = new RoleStore<IdentityRole>(context);
+                    var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+                    var userStore = new UserStore<ApplicationUser>(context);
+                    var userManager = new UserManager<ApplicationUser>(userStore);
+                    userManager.AddToRole(user.Id, "Employee");
+
+                    if (result.Succeeded)
+                    {
+
+                        // Send an email with this link
+                        //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                        //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                        string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirm your account");
+
+                        ViewBag.Message = "Check your email and confirm your account, you must be confirmed "
+                            + "before you can log in.";
+
+                        return View("Info");
+
+                    }
+                    AddErrors(result);
                 }
-                AddErrors(result);
-            }
 
-            // If we got this far, something failed, redisplay form
-            return View(model);
+                // If we got this far, something failed, redisplay form
+                return View(model);
+            }
         }
 
         //
