@@ -7,13 +7,13 @@ namespace BluePumpkinn.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class newone : IMigrationMetadata
+    public sealed partial class next : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(newone));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(next));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511261931358_newone"; }
+            get { return "201511272143025_next"; }
         }
         
         string IMigrationMetadata.Source

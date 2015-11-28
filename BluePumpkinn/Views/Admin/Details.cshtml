@@ -7,9 +7,50 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Details of @Html.DisplayFor(model => model.UserName)</h4>
+    <h4>Details of @Html.DisplayFor(model => model.Name)</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <div class="row">
+
+        <div class="col-xs-3">
+            <img class="img-responsive" src="data:image/png;base64,@Convert.ToBase64String(Model.Photo)" style="height:200px;width:200px;" />
+        </div>
+
+        <div class="col-xs-2">
+            <div>@Html.DisplayNameFor(model => model.UserName)</div>
+            <br />
+            <div>@Html.DisplayNameFor(model => model.BirthDate)</div>
+            <br />
+            <div>@Html.DisplayNameFor(model => model.Email)</div>
+            <br />
+            <div>@Html.DisplayNameFor(model => model.EmailConfirmed)</div>
+            <br />
+            <div>@Html.DisplayNameFor(model => model.PhoneNumber)</div>
+            <br />
+            <div>@Html.DisplayNameFor(model => model.PhoneNumberConfirmed)</div>
+        </div>
+
+        <div class="col-xs-7">
+            <div>@Html.DisplayFor(model => model.UserName)</div>
+            <br />
+            <div>@Html.DisplayFor(model => model.BirthDate.Date)</div>
+            <br />
+            <div>@Html.DisplayFor(model => model.Email)</div>
+            <br />
+            <div>@Html.DisplayFor(model => model.EmailConfirmed)</div>
+            <br />
+            <div>@Html.DisplayFor(model => model.PhoneNumber)</div>
+            <br />
+            <div>@Html.DisplayFor(model => model.PhoneNumberConfirmed)</div>   
+        </div>
+        
+
+
+
+
+        @*<dd>
+            <img src="data:image/png;base64,@Convert.ToBase64String(Model.Photo)" style="height:200px;width:200px;" />
+
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.UserName)
@@ -88,15 +129,19 @@
 
         <dd>
             @Html.DisplayFor(model => model.AccessFailedCount)
-        </dd>
+        </dd>*@
 
-        <dd>
-            <img src="data:image/png;base64,@Convert.ToBase64String(Model.Photo)" style="height:200px;width:200px;" />
-            
-        </dd>
-    </dl>
+    </div>
 </div>
 <p>
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id })*@ 
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="GoBack()">Spat</button> 
 </p>
+
+<script>
+    function GoBack() {
+        window.history.go(-1);
+    }
+</script>
+
+@Html.ActionLink("Back to List", "Index", new { @class = "btn btn-primary btn-large" })

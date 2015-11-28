@@ -192,17 +192,17 @@
     <Compile Include="Migrations\201511221252464_File1.Designer.cs">
       <DependentUpon>201511221252464_File1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511261931358_newone.cs" />
-    <Compile Include="Migrations\201511261931358_newone.Designer.cs">
-      <DependentUpon>201511261931358_newone.cs</DependentUpon>
+    <Compile Include="Migrations\201511272143025_next.cs" />
+    <Compile Include="Migrations\201511272143025_next.Designer.cs">
+      <DependentUpon>201511272143025_next.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511261945243_Photo.cs" />
-    <Compile Include="Migrations\201511261945243_Photo.Designer.cs">
-      <DependentUpon>201511261945243_Photo.cs</DependentUpon>
+    <Compile Include="Migrations\201511272242029_AddName.cs" />
+    <Compile Include="Migrations\201511272242029_AddName.Designer.cs">
+      <DependentUpon>201511272242029_AddName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\AdminModels.cs" />
     <Compile Include="Models\EventsModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -337,11 +337,11 @@
     <EmbeddedResource Include="Migrations\201511221252464_File1.resx">
       <DependentUpon>201511221252464_File1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511261931358_newone.resx">
-      <DependentUpon>201511261931358_newone.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511272143025_next.resx">
+      <DependentUpon>201511272143025_next.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511261945243_Photo.resx">
-      <DependentUpon>201511261945243_Photo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511272242029_AddName.resx">
+      <DependentUpon>201511272242029_AddName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

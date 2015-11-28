@@ -3,16 +3,16 @@ namespace BluePumpkinn.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Photo : DbMigration
+    public partial class AddName : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.AspNetUsers", "Photo", c => c.Binary());
+            AddColumn("dbo.AspNetUsers", "Name", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.AspNetUsers", "Photo");
+            DropColumn("dbo.AspNetUsers", "Name");
         }
     }
 }
