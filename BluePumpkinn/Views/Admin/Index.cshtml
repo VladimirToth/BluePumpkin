@@ -7,7 +7,78 @@
     ViewBag.Title = "Index";
 }
 
-//https://www.youtube.com/watch?v=JlCKBNABEzE
+<h2>Employees</h2>
+
+<div>
+    <h4>List of all Employees</h4>
+    <hr />
+    <div>
+        @using (Html.BeginForm("Index", "Admin", FormMethod.Get))
+        {
+            <p>
+                Find employee: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                <button class="btn btn-primary" type="submit">Search</button>
+            </p>
+        }
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>
+                <a href="@Url.Action("Index", "Admin", new { sortOrder = ViewBag.FirstnameSortParm, currentFilter = ViewBag.CurrentFilter })" ><span class="glyphicon glyphicon-sort"></span>Firstname</a>                
+              
+            </th>
+            <th>
+                <a href="@Url.Action("Index", "Admin", new { sortOrder = ViewBag.SurnameSortParm, currentFilter = ViewBag.CurrentFilter })"><span class="glyphicon glyphicon-sort"></span>Surname</a>
+
+            </th>
+            <th>
+                <a href="@Url.Action("Index", "Admin", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })"><span class="glyphicon glyphicon-sort"></span> Birthday</a>                
+            </th>
+            <th>
+                Username
+            </th>
+
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @item.BirthDate.Date.ToString("dd.MM.yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+
+                <td>
+                    <span>
+                        <a href="@Url.Action("Edit", "Admin", new { id = item.Id })" style="color:darkgreen"><span class="glyphicon glyphicon-pencil"></span> Edit</a> |
+                        <a href="@Url.Action("Details", "Admin", new { id = item.Id })"><span class="glyphicon glyphicon-eye-open"></span> Details</a> |
+                        <a href="@Url.Action("Delete", "Admin", new { id = item.Id })" style="color:darkred"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                    </span>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+    <br />
+</div>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+
+@*//https://www.youtube.com/watch?v=JlCKBNABEzE*@
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -23,87 +94,6 @@
         </div>
     </div>
 </div>
-
-<div>
-    <h2>Employees</h2>
-
-    @*@using (Html.BeginForm())
-        {
-
-
-        <div class="col-lg-6">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">Go!</button>
-                </span>
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-        }*@
-
-    @*<div class="input-group">
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-            </span>
-            @Html.TextBox("SearchString", null, new { @class = "form-control" })
-        </div>*@
-
-    @using (Html.BeginForm("Index", "Admin", FormMethod.Get))
-    {
-        <p>
-            Find employee: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-            @*<input type="submit" value="Search" />*@
-            <button class="btn btn-primary" type="submit">Search</button>
-        </p>
-    }
-
-    <table class="table">
-        <tr>
-            <th>
-                @Html.ActionLink("UserName", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-            </th>
-            <th>
-                @Html.ActionLink("Birthday", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
-            </th>
-            <th>
-                Email
-            </th>
-
-            <th>Action</th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserName)
-                </td>
-                <td>
-                    @item.BirthDate.Date.ToString("dd.MM.yyyy")
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-
-                <td>
-                    <span>
-                        <a href="@Url.Action("Edit", "Admin", new { id = item.Id })" style="color:darkgreen"><span class="glyphicon glyphicon-pencil"></span>Edit</a> |
-                        <a href="@Url.Action("Details", "Admin", new { id = item.Id })"><span class="glyphicon glyphicon-eye-open"></span>Details</a> |
-                        <a href="@Url.Action("Delete", "Admin", new { id = item.Id })" style="color:darkred"><span class="glyphicon glyphicon-trash"></span>Delete</a>
-                    </span>
-
-                </td>
-            </tr>
-        }
-
-    </table>
-    <br />
-</div>
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-
-@Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-
 
 <div class="row">
     <div class="col-mod-12">

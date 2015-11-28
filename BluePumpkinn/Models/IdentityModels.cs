@@ -12,7 +12,8 @@ namespace BluePumpkinn.Models
     public class ApplicationUser : IdentityUser
     {
         public DateTime BirthDate { get; set; }
-        public string Name { get; set; }
+        public string Firstname { get; set; }
+        public string Surname { get; set; }
        public byte[] Photo { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

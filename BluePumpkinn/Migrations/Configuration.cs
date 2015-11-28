@@ -103,7 +103,8 @@ namespace BluePumpkinn.Migrations
                 var admin = new ApplicationUser
                 {
                     Email = "administrator@bluepumpkin.com",
-                    Name="Jane Hudson",
+                    Firstname="Jane",
+                    Surname="Hudson",
                     UserName = "administrator@bluepumpkin.com",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1970-12-23").Date,
@@ -119,7 +120,8 @@ namespace BluePumpkinn.Migrations
                 var user1 = new ApplicationUser
                 {
                     Email = "lewis.c.morrel@bluepumpkin.com",
-                    Name = "Lewis C. Morrel",
+                    Firstname = "Lewis C.", 
+                    Surname= "Morrel",
                     UserName = "lewis.c.morrel@bluepumpkin.com",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1985-12-15").Date,
@@ -135,7 +137,8 @@ namespace BluePumpkinn.Migrations
                 {
                     Email = "desirae.young@bluepumpkin.com",
                     UserName = "desirae.young@bluepumpkin.com",
-                    Name = "Desirae Young",
+                    Firstname = "Desirae",
+                    Surname="Young",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1990-07-09").Date,
                     TwoFactorEnabled = false,
@@ -150,7 +153,8 @@ namespace BluePumpkinn.Migrations
                 {
                     Email = "john.g.winn@bluepumpkin.com",
                     UserName = "john.g.winn@bluepumpkin.com",
-                    Name = "John G. Winn",
+                    Firstname = "John G.",
+                    Surname="Winn",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1982-02-27").Date,
                     TwoFactorEnabled = false,
@@ -165,7 +169,8 @@ namespace BluePumpkinn.Migrations
                 {
                     Email = "elisabeth.c.cooper@bluepumpkin.com",
                     UserName = "elisabeth.c.cooper@bluepumpkin.com",
-                    Name = "Elisabeth C. Cooper",
+                    Firstname = "Elisabeth C.",
+                    Surname="Cooper",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1984-01-24").Date,
                     TwoFactorEnabled = false,
@@ -180,7 +185,8 @@ namespace BluePumpkinn.Migrations
                 {
                     Email = "christine.j.maynard@bluepumpkin.com",
                     UserName = "christine.j.maynard@bluepumpkin.com",
-                    Name = "Christin J. Maynard",
+                    Firstname = "Christin J.",
+                    Surname="Maynard",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1978-09-09").Date,
                     TwoFactorEnabled = false,
@@ -195,7 +201,8 @@ namespace BluePumpkinn.Migrations
                 {
                     Email = "james.p.galvan@bluepumpkin.com",
                     UserName = "james.p.galvan@bluepumpkin.com",
-                    Name = "James P. Galvan",
+                    Firstname = "James P.",
+                    Surname="Galvan",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1990-12-06").Date,
                     TwoFactorEnabled = false,
@@ -210,7 +217,8 @@ namespace BluePumpkinn.Migrations
                 {
                     Email = "debra.c.titus@bluepumpkin.com",
                     UserName = "debra.c.titus@bluepumpkin.com",
-                    Name = "Debra C. Titus",
+                    Firstname = "Debra C.",
+                    Surname="Titus",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1983-08-22").Date,
                     TwoFactorEnabled = false,
@@ -225,7 +233,8 @@ namespace BluePumpkinn.Migrations
                 {
                     Email = "giovanni.j.peng@bluepumpkin.com",
                     UserName = "giovanni.j.peng@bluepumpkin.com",
-                    Name = "Giovanni J. Peng",
+                    Firstname = "Giovanni J.",
+                    Surname="Peng",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1990-12-10").Date,
                     TwoFactorEnabled = false,
@@ -240,7 +249,8 @@ namespace BluePumpkinn.Migrations
                 {
                     Email = "henrich.fuller@bluepumpkin.com",
                     UserName = "henrich.fuller@bluepumpkin.com",
-                    Name = "Henrich Fuller",
+                    Firstname = "Henrich",
+                    Surname="Fuller",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1975-09-16").Date,
                     TwoFactorEnabled = false,
@@ -255,7 +265,8 @@ namespace BluePumpkinn.Migrations
                 {
                     Email = "michael.d.stewart@bluepumpkin.com",
                     UserName = "michael.d.stewart@bluepumpkin.com",
-                    Name = "Michael D. Stewart",
+                    Firstname = "Michael D.",
+                    Surname="Stewart",
                     EmailConfirmed = true,
                     BirthDate = DateTime.Parse("1999-09-01").Date,
                     TwoFactorEnabled = false,

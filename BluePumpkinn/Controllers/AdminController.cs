@@ -33,7 +33,8 @@ namespace BluePumpkinn.Controllers
             ApplicationRoleManager roleManager = HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
 
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.FirstnameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.SurnameSortParm = sortOrder == "Surname" ? "surname_desc" : "Surname";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
             string role = roleManager.FindByName("Employee").Id;
@@ -60,7 +61,7 @@ namespace BluePumpkinn.Controllers
             switch (sortOrder)
             {
                 case "name_desc":
-                    users = users.OrderByDescending(s => s.UserName);
+                    users = users.OrderByDescending(s => s.Firstname);
                     break;
                 case "Date":
                     users = users.OrderBy(s => s.BirthDate);
@@ -68,8 +69,14 @@ namespace BluePumpkinn.Controllers
                 case "date_desc":
                     users = users.OrderByDescending(s => s.BirthDate);
                     break;
+                case "Surname":
+                    users = users.OrderBy(s => s.Surname);
+                    break;
+                case "surname_desc":
+                    users = users.OrderByDescending(s => s.Surname);
+                    break;
                 default:
-                    users = users.OrderBy(s => s.UserName);
+                    users = users.OrderBy(s => s.Firstname);
                     break;
             }
 
