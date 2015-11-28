@@ -7,6 +7,7 @@ using System.Net;
 using BluePumpkinn.Models;
 using System.Linq;
 using System.Data;
+using PagedList;
 
 namespace BluePumpkinn.Controllers
 {
@@ -26,19 +27,35 @@ namespace BluePumpkinn.Controllers
         //}
 
         // GET: Admin
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ApplicationUserManager UserManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             ApplicationRoleManager roleManager = HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
 
-            string role = roleManager.FindByName("Employee").Id;
-
-            //return View(db.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(role)).ToList());
-
+            ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
+            string role = roleManager.FindByName("Employee").Id;
             var users = db.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(role));
+
+            //Pagging
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            //Sorting
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                users = users.Where(s => s.UserName.Contains(searchString));
+            }
 
             switch (sortOrder)
             {
@@ -55,9 +72,11 @@ namespace BluePumpkinn.Controllers
                     users = users.OrderBy(s => s.UserName);
                     break;
             }
-            return View(users.ToList());
 
-            //return View(UserManager.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(role)).ToList());
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(users.ToPagedList(pageNumber, pageSize));
+
         }
 
         public ActionResult Details(string id)
