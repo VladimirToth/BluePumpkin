@@ -134,14 +134,15 @@
     </div>
 </div>
 <p>
+    <a href="@Url.Action("Index", "Admin")" class="btn btn-primary">Back to List</a>
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id })*@ 
-    <button type="button" class="btn btn-primary" onclick="GoBack()">Spat</button> 
+    @*<button type="button" class="btn btn-primary" onclick="GoBack()">Spat</button>*@ 
 </p>
 
-<script>
+@*<script>
     function GoBack() {
         window.history.go(-1);
     }
-</script>
+</script>*@
 
-@Html.ActionLink("Back to List", "Index", new { @class = "btn btn-primary btn-large" })
+

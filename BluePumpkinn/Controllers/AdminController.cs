@@ -26,15 +26,36 @@ namespace BluePumpkinn.Controllers
         //}
 
         // GET: Admin
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
             ApplicationUserManager UserManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             ApplicationRoleManager roleManager = HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
 
             string role = roleManager.FindByName("Employee").Id;
 
-            return View(db.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(role)).ToList());
-            
+            //return View(db.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(role)).ToList());
+
+            ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            var users = db.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(role));
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    users = users.OrderByDescending(s => s.UserName);
+                    break;
+                case "Date":
+                    users = users.OrderBy(s => s.BirthDate);
+                    break;
+                case "date_desc":
+                    users = users.OrderByDescending(s => s.BirthDate);
+                    break;
+                default:
+                    users = users.OrderBy(s => s.UserName);
+                    break;
+            }
+            return View(users.ToList());
 
             //return View(UserManager.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(role)).ToList());
         }
