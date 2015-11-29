@@ -4,6 +4,9 @@
 }
 
 
+@*<link href="~/Content/datepicker.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-datepicker.js"></script>*@
+
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype="multipart/form-data" }))
@@ -65,7 +68,12 @@
         </div>
     </div>
 
-
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.BirthDate, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.BirthDate, new { @class = "datepicker form-control" })
+        </div>
+    </div>*@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
@@ -77,6 +85,13 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+@*<script type="text/javascript">
+
+    $(function () {
+        $('.datepicker').datepicker();
+    })
+</script>*@
 
 <script type="text/javascript">
   $(function () {
