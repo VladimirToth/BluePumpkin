@@ -12,8 +12,23 @@ namespace BluePumpkinn.Models
         public string Email { get; set; }
 
         [Required]
+        public string Firstname { get; set; }
+
+        [Required]
+        public string Surname { get; set; }
+
+        [Required]
         public DateTime BirthDate { get; set; }
+
+
     }
+
+    public class ExtendedExternalLoginConfirmation : ExternalLoginConfirmationViewModel
+    {
+        public HttpPostedFileBase UserProfilePicture { get; set; }
+    }
+
+
 
     public class ExternalLoginListViewModel
     {

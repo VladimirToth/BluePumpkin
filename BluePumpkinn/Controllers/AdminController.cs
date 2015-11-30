@@ -8,6 +8,7 @@ using BluePumpkinn.Models;
 using System.Linq;
 using System.Data;
 using PagedList;
+using System;
 
 namespace BluePumpkinn.Controllers
 {
@@ -94,8 +95,10 @@ namespace BluePumpkinn.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            
 
             ApplicationUser user = db.Users.Find(id);
+            
 
             if (user == null)
             {
@@ -113,7 +116,7 @@ namespace BluePumpkinn.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="Email")]ApplicationUser user)
-            //public ActionResult Create([Bind(Include = "Name, EnrollmentDate")]Student student)
+       
         {
             try
             {

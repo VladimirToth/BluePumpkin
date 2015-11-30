@@ -401,7 +401,7 @@ namespace BluePumpkinn.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                    return View("ExternalLoginConfirmation", new ExtendedExternalLoginConfirmation { Email = loginInfo.Email });
             }
         }
 
@@ -410,56 +410,90 @@ namespace BluePumpkinn.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
+        public async Task<ActionResult> ExternalLoginConfirmation(ExtendedExternalLoginConfirmation model, string returnUrl)
         {
-            if (User.Identity.IsAuthenticated)
+            using (var context = new ApplicationDbContext())
             {
-                return RedirectToAction("Index", "Manage");
-            }
 
-            if (ModelState.IsValid)
-            {
-                // Get the information about the user from the external login provider
-                var info = await AuthenticationManager.GetExternalLoginInfoAsync();
-                if (info == null)
+
+                if (User.Identity.IsAuthenticated)
                 {
-                    return View("ExternalLoginFailure");
+                    return RedirectToAction("Index", "Manage");
                 }
-                var user = new ApplicationUser 
-                { 
-                    UserName = model.Email, 
-                    Email = model.Email, 
-                    BirthDate= model.BirthDate
-                };
-                var result = await UserManager.CreateAsync(user);
-                if (result.Succeeded)
+
+                if (ModelState.IsValid)
                 {
-                    result = await UserManager.AddLoginAsync(user.Id, info.Login);
+                    // Get the information about the user from the external login provider
+                    var info = await AuthenticationManager.GetExternalLoginInfoAsync();
+                    if (info == null)
+                    {
+                        return View("ExternalLoginFailure");
+                    }
+
+                    if (model.UserProfilePicture != null)
+                    {
+                        if (model.UserProfilePicture.ContentLength > (4 * 1024 * 1024))
+                        {
+                            ModelState.AddModelError("CustomError", "Image can not be lager than 4MB.");
+                            return View();
+                        }
+                        if (!(model.UserProfilePicture.ContentType == "image/jpeg" || model.UserProfilePicture.ContentType == "image/gif"))
+                        {
+                            ModelState.AddModelError("CustomError", "Image must be in jpeg or gif format.");
+                        }
+                    }
+                    byte[] data = new byte[model.UserProfilePicture.ContentLength];
+                    model.UserProfilePicture.InputStream.Read(data, 0, model.UserProfilePicture.ContentLength);
+
+                    var user = new ApplicationUser
+                    {
+                        UserName = model.Email,
+                        Email = model.Email,
+                        BirthDate = model.BirthDate,
+                        Firstname = model.Firstname,
+                        Surname = model.Surname,
+                        Photo = data
+                    };
+
+                    var result = await UserManager.CreateAsync(user);
+
+
+                    var roleStore = new RoleStore<IdentityRole>(context);
+                    var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+                    var userStore = new UserStore<ApplicationUser>(context);
+                    var userManager = new UserManager<ApplicationUser>(userStore);
+                    userManager.AddToRole(user.Id, "Employee");
+
                     if (result.Succeeded)
                     {
-                        //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                        result = await UserManager.AddLoginAsync(user.Id, info.Login);
+                        if (result.Succeeded)
+                        {
+                            //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                        // Send an email with this link
-                        //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                        //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                        //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                            // Send an email with this link
+                            //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                            //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                            //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                        string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirm your account");
+                            string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirm your account");
 
-                        ViewBag.Message = "Check your email and confirm your account, you must be confirmed "
-                         + "before you can log in.";
+                            ViewBag.Message = "Check your email and confirm your account, you must be confirmed "
+                             + "before you can log in.";
 
 
-                        return View("Info");
+                            return View("Info");
 
-                        //return RedirectToLocal(returnUrl);
+                            //return RedirectToLocal(returnUrl);
+                        }
                     }
+                    AddErrors(result);
                 }
-                AddErrors(result);
-            }
 
-            ViewBag.ReturnUrl = returnUrl;
-            return View(model);
+                ViewBag.ReturnUrl = returnUrl;
+                return View(model);
+            }
         }
 
         //
@@ -524,9 +558,24 @@ namespace BluePumpkinn.Controllers
         {
             if (Url.IsLocalUrl(returnUrl))
             {
-                return Redirect(returnUrl + "?showDialog=true");
+                    return Redirect(returnUrl + "?showDialog=true");            
             }
-            return RedirectToAction("Index", "Home", new { showDialog = true });
+
+            else
+            {
+                ApplicationDbContext db = new ApplicationDbContext();
+                ApplicationUser user = db.Users.Where(a => a.BirthDate.Month == DateTime.Now.Month && a.BirthDate.Day == DateTime.Now.Day).First() ?? null;
+                
+                if (user!=null)
+                {
+                    return RedirectToAction("Index", "Home", new { showDialog = true });
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            
         }
 
         //If the user accidently deletes the confirmation email, or the email never arrives, they will need the confirmation link sent again.The following code  enable this.

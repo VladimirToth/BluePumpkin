@@ -39,102 +39,14 @@
             <div>@Html.DisplayFor(model => model.EmailConfirmed)</div>
             <br />
             <div>@Html.DisplayFor(model => model.PhoneNumber)</div>
-            <br />
-            <div>@Html.DisplayFor(model => model.PhoneNumberConfirmed)</div>   
+            <br /> 
         </div>
-        
-
-
-
-
-        @*<dd>
-            <img src="data:image/png;base64,@Convert.ToBase64String(Model.Photo)" style="height:200px;width:200px;" />
-
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailConfirmed)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailConfirmed)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumberConfirmed)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TwoFactorEnabled)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TwoFactorEnabled)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LockoutEndDateUtc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LockoutEnabled)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LockoutEnabled)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AccessFailedCount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccessFailedCount)
-        </dd>*@
+      
 
     </div>
 </div>
 <p>
-    <a href="@Url.Action("Index", "Admin")" class="btn btn-primary">Back to List</a>
+    <a href="@Url.Action("Index", "Admin")" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id })*@ 
     @*<button type="button" class="btn btn-primary" onclick="GoBack()">Spat</button>*@ 
 </p>

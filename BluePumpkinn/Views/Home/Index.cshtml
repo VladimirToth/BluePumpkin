@@ -592,6 +592,26 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
         </div><!-- /container -->
     </div><!-- /black -->
 
+    <div class="container">
+        <div class="modal" id="AddEmploye">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3 class="modal-title">Add new employee</h3>
+                    </div>
+                    <div class="modal-body">
+                        Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor,
+                    </div>
+                    <div class="modal-footer">
+                        <a href="" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <a href="" class="btn btn-primary">Add</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <! ========== FOOTER ========================================================================================================
     =============================================================================================================================>
 
@@ -673,6 +693,30 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
 			});
 		});
     </script>
+
+@if (Request["showDialog"] != null)
+{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#AddEmploye').modal('show');
+        });
+        
+    </script>
+}
+
+    @*<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if ($.cookie('pop') == null) {
+                $('#AddEmploye').modal('show');
+                $.cookie('pop', '7');
+            }
+        });
+    </script>*@
+
+
+
     <script>
         $(document).ready(function () {
             $("#myBtn").click(function () {

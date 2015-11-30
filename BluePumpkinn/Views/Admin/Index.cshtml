@@ -20,11 +20,12 @@
 
                     <div class="col-md-9">
                         Find employee: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-                        <button class="btn btn-primary" type="submit">Search</button>
+                        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span> Search</button>
                     </div>
 
-                    <div class="col-mod-3">
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#AddEmployee">Add new employee</button>
+                    <div class="pull-right col-mod-3">
+                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#AddEmployee"><span class="glyphicon glyphicon-plus"></span> Add new employee</button>
+                        <a class="btn btn-primary" type="button" data-modal="" href="/Admin/Create" id="btnCreate"><span class="glyphicon glyphicon-plus"></span> Add new employee</a>
                     </div>
 
                     
@@ -120,7 +121,14 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
 </div>
 <br />*@
 
-
+<!-- modal placeholder-->
+<div id='myModal' class='modal fade in'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="modal" id="AddEmployee">
@@ -151,7 +159,6 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
         }
 
     </script>
-
 
 @*<script language="javascript">
         @if (Request["showDialog"] != null)
