@@ -21,7 +21,7 @@ namespace BluePumpkinn.DAL
         }
 
         public virtual DbSet<Event> Event { get; set; }
-        public virtual DbSet<EventType> EventType { get; set; }
+        public virtual DbSet<EventParticipant> EventParticipant { get; set; }
 
     }
 }

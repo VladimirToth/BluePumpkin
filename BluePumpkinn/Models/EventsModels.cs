@@ -8,17 +8,18 @@ using System.Web.Mvc;
 
 namespace BluePumpkinn.Models
 {
-    //public class EventParticipant
-    //{
-
-    //}
-
-    public class EventType
+    public class EventParticipant
     {
         public int ID { get; set; }
-        public string TypeName { get; set; }
-        public ICollection<Event> Events { get; set; }
+        public int ApplicationUserID { get; set; }
+        public int EventID { get; set; }
+
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
+        public virtual ICollection<Event> Event { get; set; }
+
     }
+
 
     public class Event
     {
@@ -31,6 +32,8 @@ namespace BluePumpkinn.Models
 
         [Required(ErrorMessage = "Please enter the date at which event will occur!")]
         [DisplayName("Event Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EventDate { get; set; }
 
         [Required(ErrorMessage = "Please enter the location for the event!")]
@@ -42,11 +45,9 @@ namespace BluePumpkinn.Models
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
-        public int EventTypeId { get; set; }
+        public int EventParticipantID { get; set; }
 
-        public EventType EventType { get; set; }
-
-
+        public virtual ICollection<EventParticipant> EventParticipant { get; set; }
     }
 
     public class EventsModels

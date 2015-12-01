@@ -328,6 +328,7 @@
     <Content Include="Views\Event\Event4.cshtml" />
     <Content Include="Views\Event\Event5.cshtml" />
     <Content Include="Views\Event\Event6.cshtml" />
+    <Content Include="Views\Event\Event.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,7 +8,11 @@ namespace BluePumpkinn.Controllers
 {
     public class EventController : Controller
     {
-       
+        public ActionResult Event()
+        {
+            return View();
+        }
+
         public ActionResult Event1()
         {
             return View();
