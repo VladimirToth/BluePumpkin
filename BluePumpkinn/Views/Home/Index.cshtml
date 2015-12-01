@@ -601,7 +601,7 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h3 class="modal-title">Birthday</h3>
                     </div>
-                    @*<div class="modal-body">
+                    <div class="modal-body">
                         <div class="col-xs-6">
                             <img class="img-responsive" src="data:image/png;base64,@Convert.ToBase64String(ViewBag.User.Photo)" style="height:200px;width:200px;" />
                         </div>
@@ -610,8 +610,7 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
                             <br />
                             Gratulation
                         </div>
-                    </div>*@
-                    Today is our employee John celebrating birthday
+                    </div>
                     <div class="modal-footer">
                         <a href="" class="btn btn-default" data-dismiss="modal">Close</a>
                     </div>
@@ -702,7 +701,7 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
 		});
     </script>
 
-@if (Request["showDialog"] != null @*&& ViewBag.UserBirth != null*@)
+@if (Request["showDialog"] != null && ViewBag.UserBirth != null)
 {
     <script type="text/javascript">
         $(document).ready(function() {
