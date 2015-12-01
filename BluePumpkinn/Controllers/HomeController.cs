@@ -12,15 +12,15 @@ namespace BluePumpkinn.Controllers
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var user = db.Users.FirstOrDefault(a => a.BirthDate.Month == DateTime.Now.Month && a.BirthDate.Day == DateTime.Now.Day);
-
-            if (user != null)
-            {
-                ViewBag.UserBirth = user;
-            }
-            else
-            {
-                ViewBag.UserBirth = null;
-            }        
+          
+            //if (user!=null)
+            //{
+            //    ViewBag.UserBirth = user;
+            //}
+            //else
+            //{
+            //    ViewBag.UserBirth = null;
+            //}        
             return View();
         }
 
