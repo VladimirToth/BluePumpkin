@@ -16,16 +16,6 @@ namespace BluePumpkinn.Controllers
     public class AdminController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
-        //http://stackoverflow.com/questions/22847351/filter-user-list-asp-net-identity
-        //http://stackoverflow.com/questions/26174576/initializing-rolemanager-in-asp-net-identity-with-custom-roles
-        //http://stackoverflow.com/questions/23824397/get-list-of-users-with-assigned-roles-in-asp-net-identity-2-0
-        //private RoleManager roleManager
-        //{
-        //    get
-        //    {
-        //        return HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-        //    }
-        //}
 
         // GET: Admin
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
@@ -135,22 +125,44 @@ namespace BluePumpkinn.Controllers
         }
 
         [HttpGet]
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             ApplicationUser user = db.Users.Find(id);
 
             return View(user);
         }
 
-       
-        [HttpPost]
-        public ActionResult Edit(string id)
+
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPost(string id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             var user = db.Users.Find(id);
-            return View();
+            if (TryUpdateModel(user, "",
+               new string[] { "Firstname", "Surname" }))
+            {
+                try
+                {
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+                catch (DataException /* dex */)
+                {
+                    //Log the error (uncomment dex variable name and add a line here to write a log.
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                }
+            }
+            return View(user);
+
         }
 
-        
+
         public ActionResult Delete(string id)
         {
             if (id == null)

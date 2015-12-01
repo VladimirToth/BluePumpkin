@@ -1,9 +1,9 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
 }
-@*@{
-    var event1 = Html.Action("Index", "Event");
-}*@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -370,8 +370,9 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
     <div id="cta-bar">
         <div class="container">
             <div class="row centered">
+
                 @Html.ActionLink("Do you Want To Create a New Event?", "EventForm")
-            @*    <a href="#"><h4>Do You Want To Create A New Event?</h4></a>*@
+
             </div>
         </div><!-- /container -->
     </div><!-- /cta-bar -->
@@ -593,19 +594,25 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
     </div><!-- /black -->
 
     <div class="container">
-        <div class="modal" id="AddEmploye">
+        <div class="modal" id="Birthday">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h3 class="modal-title">Add new employee</h3>
+                        <h3 class="modal-title">Birthday</h3>
                     </div>
                     <div class="modal-body">
-                        Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor,
+                        <div class="col-xs-6">
+                            <img class="img-responsive" src="data:image/png;base64,@Convert.ToBase64String(ViewBag.User.Photo)" style="height:200px;width:200px;" />
+                        </div>
+                        <div class="col-xs-6">
+                            Today celebrate birthday @ViewBag.User.Firstname @ViewBag.User.Surname 
+                            <br />
+                            Gratulation
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <a href="" class="btn btn-default" data-dismiss="modal">Close</a>
-                        <a href="" class="btn btn-primary">Add</a>
                     </div>
                 </div>
             </div>
@@ -694,26 +701,15 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
 		});
     </script>
 
-@if (Request["showDialog"] != null)
+@if (Request["showDialog"] != null && ViewBag.UserBirth != null)
 {
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#AddEmploye').modal('show');
+            $('#Birthday').modal('show');
         });
-        
+
     </script>
 }
-
-    @*<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js">
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            if ($.cookie('pop') == null) {
-                $('#AddEmploye').modal('show');
-                $.cookie('pop', '7');
-            }
-        });
-    </script>*@
 
 
 

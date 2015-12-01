@@ -20,26 +20,26 @@
     </p>
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+        <div class="col-md-6">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Firstname, new { @class = "col-md-2 control-label" })
-        <div class="col-md-4">
+        <div class="col-md-6">
             @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Surname, new { @class = "col-md-2 control-label" })
-        <div class="col-md-4">
+        <div class="col-md-6">
             @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
         @Html.Label("Photo", new { @class = "control-label col-md-2" })
-        <div class="col-md-4">
+        <div class="col-md-6">
             @Html.TextBoxFor(m => m.UserProfilePicture, new { type = "file" })
             @Html.ValidationMessage("CustomMessage")
             @*<input type="file" accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|images/*" id="Photo" name="upload" />*@
@@ -47,11 +47,18 @@
     </div>
 
 
-
     <div class="form-group">
         @Html.LabelFor(m => m.BirthDate, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control" })
+        <div class="col-md-6">
+            @Html.EditorFor(m => m.BirthDate,
+           new
+           {
+               htmlAttributes = new
+               {
+                   @Value = (Model != null && Model.BirthDate != null ? Model.BirthDate.Date.ToString("dd/MM/yyyy") : ""),
+                   @class = "form-control"
+               },
+           })
             @Html.ValidationMessageFor(m => m.BirthDate)
         </div>
     </div>
@@ -65,4 +72,17 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+<script type="text/javascript">
+    $(function () {
+
+        $('#BirthDate').datetimepicker({
+            defaultDate: '@( Model != null ? Model.BirthDate.ToString() : "")',
+            format: 'L',
+            showClose: true,
+            showClear: true,
+            toolbarPlacement: 'top'
+        });
+    });
+</script>
 }

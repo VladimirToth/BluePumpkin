@@ -564,7 +564,7 @@ namespace BluePumpkinn.Controllers
             else
             {
                 ApplicationDbContext db = new ApplicationDbContext();
-                ApplicationUser user = db.Users.Where(a => a.BirthDate.Month == DateTime.Now.Month && a.BirthDate.Day == DateTime.Now.Day).First() ?? null;
+                var user = db.Users.FirstOrDefault(a => a.BirthDate.Month == DateTime.Now.Month && a.BirthDate.Day == DateTime.Now.Day);
                 
                 if (user!=null)
                 {
@@ -574,6 +574,7 @@ namespace BluePumpkinn.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
+
             }
             
         }

@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="pull-right col-mod-3">
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#AddEmployee"><span class="glyphicon glyphicon-plus"></span> Add new employee</button>
+                        @*<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#AddEmployee"><span class="glyphicon glyphicon-plus"></span> Add new employee</button>*@
                         <a class="btn btn-primary" type="button" data-modal="" href="/Admin/Create" id="btnCreate"><span class="glyphicon glyphicon-plus"></span> Add new employee</a>
                     </div>
 
@@ -97,59 +97,6 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 
 
-
-@*<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                <h4 class="modal-title" id="myModalLabel">Add new employee</h4>
-            </div>
-            <div class="modal-body">
-                <div id="modal-content">
-                    Loading...
-                </div>
-            </div>
-        </div>
-    </div>
-</div>*@
-
-@*<div class="row">
-    <div class="col-mod-12">
-        <a id="btnNew" href="#" onclick="showModal();" class="btn btn-primary">Add new user</a>
-    </div>
-</div>
-<br />*@
-
-<!-- modal placeholder-->
-<div id='myModal' class='modal fade in'>
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div id='myModalContent'></div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="modal" id="AddEmployee">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3 class="modal-title">Add new employee</h3>
-                </div>
-                <div class="modal-body">
-                    Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor, Lorem ipsum dolor,
-                </div>
-                <div class="modal-footer">
-                    <a href="" class="btn btn-default" data-dismiss="modal">Close</a>
-                    <a href="" class="btn btn-primary">Add</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 @section scripts {
 
     <script language="javascript">
@@ -159,13 +106,5 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
         }
 
     </script>
-
-@*<script language="javascript">
-        @if (Request["showDialog"] != null)
-        {
-            @("$('#myModal').modal()")
-        }
-
-</script>*@
 
 }

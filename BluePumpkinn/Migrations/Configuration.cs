@@ -45,57 +45,57 @@ namespace BluePumpkinn.Migrations
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new ApplicationUserManager(userStore);
 
-                System.IO.FileStream file1 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\jenn-hudson.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file1 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\jenn-hudson.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data1 = new byte[file1.Length];
                 file1.Read(data1, 0, data1.Length);
                 file1.Close();
 
-                System.IO.FileStream file2 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\lewis-c-morel.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file2 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\lewis-c-morel.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data2 = new byte[file2.Length];
                 file2.Read(data2, 0, data2.Length);
                 file2.Close();
 
-                System.IO.FileStream file3 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\desirae-young.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file3 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\desirae-young.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data3 = new byte[file3.Length];
                 file3.Read(data3, 0, data3.Length);
                 file3.Close();
 
-                System.IO.FileStream file4 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\john-g-winn.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file4 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\john-g-winn.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data4 = new byte[file4.Length];
                 file4.Read(data4, 0, data4.Length);
                 file4.Close();
 
-                System.IO.FileStream file5 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\elisabeth-c-cooper.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file5 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\elisabeth-c-cooper.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data5 = new byte[file5.Length];
                 file5.Read(data5, 0, data5.Length);
                 file5.Close();
 
-                System.IO.FileStream file6 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\christine-j-maynard.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file6 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\christine-j-maynard.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data6 = new byte[file6.Length];
                 file6.Read(data6, 0, data6.Length);
                 file6.Close();
 
-                System.IO.FileStream file7 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\james-p-galvan.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file7 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\james-p-galvan.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data7 = new byte[file7.Length];
                 file7.Read(data7, 0, data7.Length);
                 file7.Close();
 
-                System.IO.FileStream file8 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\debra-c-titus.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file8 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\debra-c-titus.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data8 = new byte[file8.Length];
                 file8.Read(data8, 0, data8.Length);
                 file8.Close();
 
-                System.IO.FileStream file9 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\giovanni-j-peng.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file9 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\giovanni-j-peng.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data9 = new byte[file9.Length];
                 file9.Read(data9, 0, data9.Length);
                 file9.Close();
 
-                System.IO.FileStream file10 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\henrich-fuller.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file10 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\henrich-fuller.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data10 = new byte[file10.Length];
                 file10.Read(data10, 0, data10.Length);
                 file10.Close();
 
-                System.IO.FileStream file11 = new System.IO.FileStream(@"C:\Users\Vlado\Desktop\BluePumpkin\zamestnaci_jednotna_velkost\michael-d-stewart.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.FileStream file11 = new System.IO.FileStream(@"C:\Users\toth\Desktop\zamestnaci_jednotna_velkost\michael-d-stewart.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 byte[] data11 = new byte[file11.Length];
                 file11.Read(data11, 0, data11.Length);
                 file11.Close();
