@@ -83,7 +83,7 @@
         <div class="container">
             <div class="row centered">
                 <div class="col-lg-8 col-lg-offset-2 mt">
-                    <h1 class="animation slideDown">We are Blue Pumpkin. Changing the world since 1995.</h1>
+                    <h1 class="animation slideDown">We are Blue Pumpkinn. Changing the world since 1995.</h1>
                     <p class="mt"><a href="#company"><button type="button" class="btn btn-cta btn-lg">More about Us</button></a></p>
                 </div>
 
@@ -379,7 +379,7 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
     <! ========== BLACK SECTION =================================================================================================
     =============================================================================================================================>
     <div id="white">
-        <div class="container">
+        <div id="FAQ" class="container">
             <div class="row centered">
                 <div class="centered">
                     <h3>Frequently asked questions (FAQ)</h3>
@@ -603,14 +603,13 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
                     </div>
                     <div class="modal-body">
                         @*<div class="col-xs-6">
-                            <img class="img-responsive" src="data:image/png;base64,@Convert.ToBase64String(ViewBag.User.Photo)" style="height:200px;width:200px;" />
-                        </div>
+                            <img class="img-responsive" src="data:image/png;base64,@Convert.ToBase64String(ViewBag.UserBirth.Photo)" style="height:200px;width:200px;" />
+                        </div>*@
                         <div class="col-xs-6">
-                            Today celebrate birthday @ViewBag.User.Firstname @ViewBag.User.Surname 
+                            @*Today celebrate birthday @ViewBag.UserBirth.Firstname @ViewBag.UserBirth.Surname*@ 
                             <br />
                             Gratulation
-                        </div>*@
-                        Today celebrate birthday our employee Peter Hanak
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <a href="" class="btn btn-default" data-dismiss="modal">Close</a>
@@ -702,7 +701,7 @@ In case of problems please visit BPEM.com/FAQ, or contact us at support@bluepump
 		});
     </script>
 
-@if (Request["showDialog"] != null @*&& ViewBag.UserBirth != null*@)
+@if (Request["showDialog"] != null && ViewBag.UserBirth != null)
 {
     <script type="text/javascript">
         $(document).ready(function() {
