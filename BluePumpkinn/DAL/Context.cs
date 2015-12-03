@@ -1,4 +1,5 @@
 ﻿using BluePumpkinn.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -20,8 +21,9 @@ namespace BluePumpkinn.DAL
             base.OnModelCreating(modelBuilder);
         }
 
-        public virtual DbSet<Event> Event { get; set; }
-        public virtual DbSet<EventParticipant> EventParticipant { get; set; }
+        public DbSet<Event> Event { get; set; }
+        //public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        //public DbSet<EventParticipant> EventParticipant { get; set; }
 
     }
 }

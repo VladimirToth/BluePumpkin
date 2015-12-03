@@ -15,12 +15,13 @@ namespace BluePumpkinn.Controllers
           
             if (user!=null)
             {
+                //ViewBag.UserBirth = user.Firstname + " " + user.Surname;
                 ViewBag.UserBirth = user;
             }
-            else
-            {
-                ViewBag.UserBirth = null;
-            }        
+            //else
+            //{
+            //    ViewBag.UserBirth = "Nobody";
+            //}        
             return View();
         }
 

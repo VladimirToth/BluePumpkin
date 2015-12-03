@@ -180,6 +180,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\Context.cs" />
@@ -214,6 +215,15 @@
     <Compile Include="Migrations\201511281801211_AddName1.Designer.cs">
       <DependentUpon>201511281801211_AddName1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512022342473_Events.cs" />
+    <Compile Include="Migrations\201512022342473_Events.Designer.cs">
+      <DependentUpon>201512022342473_Events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AnotherDbContext\201512030208506_NextRemovesss.cs" />
+    <Compile Include="Migrations\AnotherDbContext\201512030208506_NextRemovesss.Designer.cs">
+      <DependentUpon>201512030208506_NextRemovesss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AnotherDbContext\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EventsModels.cs" />
@@ -333,7 +343,11 @@
     <Content Include="Views\Event\Event4.cshtml" />
     <Content Include="Views\Event\Event5.cshtml" />
     <Content Include="Views\Event\Event6.cshtml" />
-    <Content Include="Views\Event\Event.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Events\Delete.cshtml" />
+    <Content Include="Views\Events\Details.cshtml" />
+    <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\Events\ListOfEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -363,6 +377,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511281801211_AddName1.resx">
       <DependentUpon>201511281801211_AddName1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512022342473_Events.resx">
+      <DependentUpon>201512022342473_Events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\AnotherDbContext\201512030208506_NextRemovesss.resx">
+      <DependentUpon>201512030208506_NextRemovesss.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

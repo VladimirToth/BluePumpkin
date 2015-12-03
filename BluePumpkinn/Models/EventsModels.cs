@@ -11,10 +11,10 @@ namespace BluePumpkinn.Models
     public class EventParticipant
     {
         public int ID { get; set; }
-        public int ApplicationUserID { get; set; }
-        public int EventID { get; set; }
+        public string ApplicationUserID { get; set; }
+        public bool Status { get; set; }
 
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
 
         public virtual ICollection<Event> Event { get; set; }
 
@@ -33,8 +33,8 @@ namespace BluePumpkinn.Models
         [Required(ErrorMessage = "Please enter the date at which event will occur!")]
         [DisplayName("Event Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime EventDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? EventDate { get; set; }
 
         [Required(ErrorMessage = "Please enter the location for the event!")]
         [DisplayName("Event Location")]
@@ -45,9 +45,9 @@ namespace BluePumpkinn.Models
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
-        public int EventParticipantID { get; set; }
+        //public int EventParticipantID { get; set; }
 
-        public virtual ICollection<EventParticipant> EventParticipant { get; set; }
+        //public virtual ICollection<EventParticipant> EventParticipant { get; set; }
     }
 
     public class EventsModels

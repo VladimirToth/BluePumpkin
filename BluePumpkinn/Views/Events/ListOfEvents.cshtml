@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<BluePumpkinn.Models.Event>
 
 @{
-    ViewBag.Title = "Event";
+    ViewBag.Title = "Index";
 }
 
-<h2>Event</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -19,11 +19,8 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EventLocation)
+            
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-
         <th></th>
     </tr>
 
@@ -31,6 +28,7 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EventDate)
@@ -38,10 +36,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.EventLocation)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
