@@ -47,7 +47,7 @@ namespace BluePumpkinn.Models
 
         //public int EventParticipantID { get; set; }
 
-        //public virtual ICollection<EventParticipant> EventParticipant { get; set; }
+        public virtual ICollection<EventParticipant> EventParticipant { get; set; }
     }
 
     public class EventsModels
