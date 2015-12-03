@@ -18,10 +18,10 @@ namespace BluePumpkinn.Controllers
                 //ViewBag.UserBirth = user.Firstname + " " + user.Surname;
                 ViewBag.UserBirth = user;
             }
-            //else
-            //{
-            //    ViewBag.UserBirth = "Nobody";
-            //}        
+            else
+            {
+                ViewBag.UserBirth = user;
+            }        
             return View();
         }
 
