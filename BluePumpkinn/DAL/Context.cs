@@ -1,29 +1,29 @@
-﻿using BluePumpkinn.Models;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿//using BluePumpkinn.Models;
+//using Microsoft.AspNet.Identity.EntityFramework;
+//using System;
+//using System.Collections.Generic;
+//using System.Data.Entity;
+//using System.Linq;
+//using System.Web;
 
-namespace BluePumpkinn.DAL
-{
-    public class Context:IdentityDbContext
-    {
-        public Context()
-            : base("DefaultConnection")
-        {
+//namespace BluePumpkinn.DAL
+//{
+//    public class Context:IdentityDbContext
+//    {
+//        public Context()
+//            : base("DefaultConnection")
+//        {
 
-        }
+//        }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //}
+//        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+//        //{
+//        //    base.OnModelCreating(modelBuilder);
+//        //}
 
-        public DbSet<Event> Event { get; set; }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public DbSet<EventParticipant> EventParticipant { get; set; }
+//        public DbSet<Event> Event { get; set; }
+//        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+//        public DbSet<EventParticipant> EventParticipant { get; set; }
 
-    }
-}
+//    }
+//}
