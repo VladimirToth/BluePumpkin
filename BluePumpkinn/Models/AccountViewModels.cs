@@ -108,8 +108,8 @@ namespace BluePumpkinn.Models
         public string Surname { get; set; }
 
         [Required]
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Birthday")]
         public DateTime BirthDate { get; set; }
 
