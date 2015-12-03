@@ -187,60 +187,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511171735101_InitialCreate.cs" />
-    <Compile Include="Migrations\201511171735101_InitialCreate.Designer.cs">
-      <DependentUpon>201511171735101_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511172019194_Init.cs" />
-    <Compile Include="Migrations\201511172019194_Init.Designer.cs">
-      <DependentUpon>201511172019194_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511181819093_New.cs" />
-    <Compile Include="Migrations\201511181819093_New.Designer.cs">
-      <DependentUpon>201511181819093_New.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511221252464_File1.cs" />
-    <Compile Include="Migrations\201511221252464_File1.Designer.cs">
-      <DependentUpon>201511221252464_File1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511272143025_next.cs" />
-    <Compile Include="Migrations\201511272143025_next.Designer.cs">
-      <DependentUpon>201511272143025_next.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511272242029_AddName.cs" />
-    <Compile Include="Migrations\201511272242029_AddName.Designer.cs">
-      <DependentUpon>201511272242029_AddName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511281801211_AddName1.cs" />
-    <Compile Include="Migrations\201511281801211_AddName1.Designer.cs">
-      <DependentUpon>201511281801211_AddName1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512022342473_Events.cs" />
-    <Compile Include="Migrations\201512022342473_Events.Designer.cs">
-      <DependentUpon>201512022342473_Events.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\AnotherDbContext\201512030208506_NextRemovesss.cs" />
-    <Compile Include="Migrations\AnotherDbContext\201512030208506_NextRemovesss.Designer.cs">
-      <DependentUpon>201512030208506_NextRemovesss.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\AnotherDbContext\201512030844508_New.cs" />
-    <Compile Include="Migrations\AnotherDbContext\201512030844508_New.Designer.cs">
-      <DependentUpon>201512030844508_New.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\AnotherDbContext\201512030847379_Next.cs" />
-    <Compile Include="Migrations\AnotherDbContext\201512030847379_Next.Designer.cs">
-      <DependentUpon>201512030847379_Next.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\AnotherDbContext\201512030850069_Next455.cs" />
-    <Compile Include="Migrations\AnotherDbContext\201512030850069_Next455.Designer.cs">
-      <DependentUpon>201512030850069_Next455.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\AnotherDbContext\201512030855270_Next45.cs" />
-    <Compile Include="Migrations\AnotherDbContext\201512030855270_Next45.Designer.cs">
-      <DependentUpon>201512030855270_Next45.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\AnotherDbContext\Configuration.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EventsModels.cs" />
     <Compile Include="Models\HomeModels.cs" />
@@ -371,47 +317,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511171735101_InitialCreate.resx">
-      <DependentUpon>201511171735101_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511172019194_Init.resx">
-      <DependentUpon>201511172019194_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511181819093_New.resx">
-      <DependentUpon>201511181819093_New.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511221252464_File1.resx">
-      <DependentUpon>201511221252464_File1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511272143025_next.resx">
-      <DependentUpon>201511272143025_next.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511272242029_AddName.resx">
-      <DependentUpon>201511272242029_AddName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511281801211_AddName1.resx">
-      <DependentUpon>201511281801211_AddName1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512022342473_Events.resx">
-      <DependentUpon>201512022342473_Events.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\AnotherDbContext\201512030208506_NextRemovesss.resx">
-      <DependentUpon>201512030208506_NextRemovesss.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\AnotherDbContext\201512030844508_New.resx">
-      <DependentUpon>201512030844508_New.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\AnotherDbContext\201512030847379_Next.resx">
-      <DependentUpon>201512030847379_Next.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\AnotherDbContext\201512030850069_Next455.resx">
-      <DependentUpon>201512030850069_Next455.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\AnotherDbContext\201512030855270_Next45.resx">
-      <DependentUpon>201512030855270_Next45.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
