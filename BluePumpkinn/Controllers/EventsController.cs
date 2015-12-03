@@ -20,8 +20,10 @@ namespace BluePumpkinn.Controllers
         {
             
             return View(db.Event.ToList());
+            
         }
 
+        
         // GET: Events/Details/5
         public ActionResult Details(int? id)
         {
